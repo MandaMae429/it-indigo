@@ -1,0 +1,13 @@
+:root{
+    --background-color:#34283F;
+    --accent-violet:#564A70;
+    --accent-lt-purp:#7F5388;
+    --accent-teal:#8BB9C1;
+    --accent-mint:#BDDEDD;
+}
+
+body{
+    background-color:var(--background-color);
+    font-family: "Cormorant Garamond", serif;
+
+}
