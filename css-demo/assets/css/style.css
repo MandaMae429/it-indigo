@@ -1,0 +1,28 @@
+:root{
+    --background-color:#746B2A;
+    --accent-orange:#564A70;
+    --accent-beige:#D0B88D;
+    --accent-lt-purp:#46374B;
+    --accent-dk-purp:#222023;
+}
+
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+font-family: "Cormorant Garamond", serif;
+background-color: var(--accent-dk-purp);
+}
+
+main {
+ background-color: var(--background-color);
+ width:80vw;
+ text-align: center;
+ margin: 40px auto 40px auto;
+
+}
