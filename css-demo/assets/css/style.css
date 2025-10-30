@@ -1,11 +1,17 @@
 :root{
     --background-color:#746B2A;
-    --accent-orange:#564A70;
+    --accent-orange:#DC5D10;
     --accent-beige:#D0B88D;
     --accent-lt-purp:#46374B;
     --accent-dk-purp:#222023;
 }
+/* -------- Utility Class ---------*/
 
+.container{
+  margin:auto;
+  padding:40px;
+  max-width: 980px;
+}
 
 html {
   box-sizing: border-box;
@@ -24,5 +30,29 @@ main {
  width:80vw;
  text-align: center;
  margin: 40px auto 40px auto;
+ max-width:980px;
+
+}
+
+header.primary{
+  background-color: var(--accent-orange);
+  padding:20px;
+  background-image: url("../img/bg_1.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 2.5px #222023 solid;
+  display:flex;
+  justify-content: space-between;
+}
+
+div.hgroup h1 a{
+  color: var(--accent-beige);
+  text-decoration: none;
+  font-size: 3rem;
+}
+
+div.hgroup h2{
+  color: var(--accent-beige);
 
 }
