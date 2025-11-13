@@ -5,7 +5,14 @@
     --accent-lt-purp:#46374B;
     --accent-dk-purp:#222023;
 }
+
+/**--------Repsonsive Image---------*/
+
+
+
 /* -------- Utility Class ---------*/
+
+
 
 .container{
   margin:auto;
@@ -101,4 +108,46 @@ header.primary nav ul li a:hover{
   border-left: 10px solid var(--accent-orange);
   border-radius:15px 0;
   padding:5px 7.5px 0 5px;
+}
+
+#blog{
+  background-color: var(--accent-orange);
+  border-top:2rem double var(--accent-dk-purp);
+  }
+
+#blog > h2{
+  color: var(--accent-beige);
+  text-shadow: 2px 2px var(--accent-dk-purp);
+}
+
+#blog .post{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
+  grid-template-areas: 
+  "figure header"
+  "figure post-content"
+  "figure footer"
+  ;
+}
+
+.post figure{
+ grid-area: figure;
+}
+
+.post header{
+ grid-area: header;
+}
+
+.post .post-content{
+ grid-area: post-content;
+}
+
+.post .post-meta{
+ grid-area: footer;
+}
+
+aside .container{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
 }
