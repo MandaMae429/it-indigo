@@ -10,7 +10,7 @@ html {
 }
 
 body{
-  font-family: 'Lato', sans-serif;
+  font-family: "Cormorant Garamond", serif;
   background-color: #FBC00B;
   padding: 20px;
 }
@@ -20,11 +20,11 @@ label, input {
 }
 
 header h1{
-  text-align:center;
+  text-align:left;
 }
 
 section[id]{
-  border:6px solid rgba(0,0,0,.4);
+  border:8px solid rgba(0,0,0,.4);
   background-color:#697760;
   border-radius:12px;
   margin:40px auto;
@@ -42,7 +42,7 @@ h2.section-heading{
 }
 
 h3.section-heading{
-  border-top:2px solid #c0c0c0;
+  border-top:2px solid #F6D8A2;
   padding-top:20px;
 }
 
@@ -57,14 +57,24 @@ h2.section-heading + h3.section-heading {
   margin-bottom:40px;
 }
 .markup{
-  flex: 1 70%;
+  flex: 1 55%;
   background-color:lightgrey;
   padding:10px;
   margin-bottom:40px;
   overflow:auto;
 }
 
+ a:link {
+	color: black;
+}
 
+a:visited{
+	color: #F6D8A2;
+}
+
+footer{
+	text-align: center;
+}
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
