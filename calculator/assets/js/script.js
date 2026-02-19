@@ -1,13 +1,13 @@
 $(function () {
     // Attach jQuery Validation to the form
-    var validator = $("#myform").validate({
+    let validator = $("#myform").validate({
         // Use data-* attributes for rules/messages already in the HTML
         errorPlacement: function (error, element) {
             // Put errors into the existing <label class="error"> placeholders
-            var id = element.attr("id");
+            let id = element.attr("id");
             if (id === "Operand1") {
                 error.appendTo("#Operand1Error");
-            } else if (id === "Operand3") {
+            } else if (id === "Operand2") {
                 error.appendTo("#Operand2Error");
             } else if (element.attr("name") === "Operator") {
                 error.appendTo("#OperatorError");
