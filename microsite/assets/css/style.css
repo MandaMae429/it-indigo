@@ -1,5 +1,97 @@
+.container{
+  margin:auto;
+  padding:40px;
+  max-width: 980px;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body{
+    background-image: linear-gradient(to left top, #1b2a30, #1b3038, #1a3741, #193d4a, #164453, #214e5e, #2c5969, #376474, #507685, #678996, #7f9ca7, #97afb9);
+    background-image: no-repeat;
     font-family: "pacaembu", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+h1.primary{
+  grid-area: h1;
+}
+
+h3.sub{
+  grid-area: h3;
+}
+
+.hgroup{
+  display: grid;
+  grid-template-columns: 1fr, 2fr;
+  grid-template-areas: 
+  "h1 h3 h3";
+}
+
+#about{
+  grid-area: about;
+}
+
+#history{
+  grid-area:history;
+}
+
+#contact{
+  grid-area: contact;
+}
+
+#image{
+  grid-area: image;
+}
+
+#youtube{
+  grid-area: youtube;
+}
+
+#api{
+  grid-area:api;
+}
+
+#1{
+ grid-area: 1;
+}
+
+#2{
+  grid-area:2;
+}
+
+#3{
+  grid-area:3;
+}
+
+#4{
+  grid-area:4;
+}
+
+#grid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: 
+  "image image api about about"
+  "image image api 2 2"
+  "youtube history history history 1"
+  "youtube 3 3 3 1"
+  ;
+}
+
+.container{
+  background-color: #c0c0c0;
+      border-radius: 10px;
+      border-color: #000;
+      border: solid;
+      padding: 20px;
+       gap: 10px;
+      max-width: 80vw;
+      margin: 20px auto;
 }
