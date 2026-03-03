@@ -1,0 +1,305 @@
+/* ================================================
+   TOKENS
+   ================================================ */
+:root {
+  --c-bg:           #0d0d10;
+  --c-surface:      #18181d;
+  --c-accent:       #5b7fff;
+  --c-accent-light: #8aaaff;
+  --c-text:         #f2f2f6;
+  --c-muted:        #7878a0;
+  --c-dot-off:      #2e2e42;
+  --c-btn-bg:       rgba(255,255,255,0.12);
+  --c-btn-hover:    rgba(255,255,255,0.24);
+  --c-shadow:       rgba(0,0,0,0.6);
+  --c-caption-grad: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+
+  --radius-card:  16px;
+  --radius-btn:   50%;
+  --radius-pill:  999px;
+
+  --dur-slide:    0.42s;
+  --ease-slide:   cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:     0.18s;
+
+  /* Clamp-based fluid sizing */
+  --btn-size:     clamp(2.25rem, 5vw, 3rem);
+  --btn-font:     clamp(1.1rem,  3vw, 1.5rem);
+  --dot-size:     clamp(8px, 1.5vw, 11px);
+  --cap-size:     clamp(0.78rem, 2vw, 1rem);
+}
+
+/* ================================================
+   RESET
+   ================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ================================================
+   PAGE SHELL
+   ================================================ */
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 2.5rem);
+}
+
+.page {
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* ================================================
+   FOCUS RING — keyboard only, never on mouse click
+   ================================================ */
+:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ================================================
+   CAROUSEL SHELL
+   ================================================ */
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+/* Visually hidden live region */
+.carousel__live {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ================================================
+   WINDOW (overflow mask)
+   ================================================ */
+.carousel__window {
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  box-shadow: 0 20px 60px var(--c-shadow);
+  touch-action: pan-y;       /* allow vertical page scroll */
+  cursor: grab;
+}
+
+.carousel__window:active { cursor: grabbing; }
+
+/* ================================================
+   TRACK
+   ================================================ */
+.carousel__track {
+  display: flex;
+  list-style: none;
+  will-change: transform;
+  transition: transform var(--dur-slide) var(--ease-slide);
+}
+
+/* ================================================
+   SLIDE
+   ================================================ */
+.carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+/* ================================================
+   FIGURE + IMAGE
+   ================================================ */
+.carousel__figure {
+  position: relative;
+  width: 100%;
+  /* 16:9 on large, slightly taller on small to fill the thumb better */
+  aspect-ratio: 16 / 9;
+  background: var(--c-surface);
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .carousel__figure { aspect-ratio: 4 / 3; }
+}
+
+.carousel__figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+/* Subtle zoom on the active slide */
+.carousel__slide:not([aria-hidden="true"]) .carousel__figure img {
+  transform: scale(1.03);
+}
+
+/* ================================================
+   CAPTION
+   ================================================ */
+figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: clamp(0.6rem, 2vw, 1rem) clamp(0.75rem, 2.5vw, 1.5rem);
+  background: var(--c-caption-grad);
+  font-size: var(--cap-size);
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.025em;
+}
+
+/* ================================================
+   PREV / NEXT CONTROLS
+   ================================================ */
+.carousel__controls {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(0.4rem, 2vw, 0.9rem);
+  pointer-events: none;       /* let clicks fall through to track */
+}
+
+.carousel__btn {
+  pointer-events: all;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  border-radius: var(--radius-btn);
+  border: none;
+  background: var(--c-btn-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition:
+    background var(--dur-fast) ease,
+    transform  var(--dur-fast) ease,
+    opacity    var(--dur-fast) ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  /* Scale SVG with button */
+  padding: clamp(0.35rem, 1vw, 0.55rem);
+}
+
+.carousel__btn svg { width: 100%; height: 100%; }
+
+.carousel__btn:hover  { background: var(--c-btn-hover); transform: scale(1.1); }
+.carousel__btn:active { transform: scale(0.94); }
+.carousel__btn:disabled { opacity: 0.25; pointer-events: none; }
+
+/* Hide arrows on very small screens — dots + swipe are enough */
+@media (max-width: 360px) {
+  .carousel__controls { display: none; }
+}
+
+/* ================================================
+   BOTTOM BAR (dots + autoplay)
+   ================================================ */
+.carousel__bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.6rem, 2vw, 1.2rem);
+  margin-top: clamp(0.75rem, 2vw, 1.1rem);
+  flex-wrap: wrap;
+}
+
+/* ── Dots ── */
+.carousel__dots {
+  display: flex;
+  gap: clamp(0.4rem, 1.2vw, 0.6rem);
+  align-items: center;
+}
+
+.carousel__dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  background: var(--c-dot-off);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background   0.25s ease,
+    transform    0.25s ease,
+    width        0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Active dot: pill shape */
+.carousel__dot[aria-current="true"] {
+  background: var(--c-accent);
+  border-color: var(--c-accent-light);
+  width: calc(var(--dot-size) * 2.6);
+  border-radius: var(--radius-pill);
+  transform: none;
+}
+
+.carousel__dot:hover:not([aria-current="true"]) {
+  background: var(--c-muted);
+  transform: scale(1.2);
+}
+
+/* ── Autoplay button ── */
+.carousel__autoplay {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.3em 0.85em;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--c-dot-off);
+  background: transparent;
+  color: var(--c-muted);
+  font-size: clamp(0.72rem, 1.5vw, 0.82rem);
+  cursor: pointer;
+  transition:
+    color        var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    background   var(--dur-fast) ease;
+  white-space: nowrap;
+}
+
+.carousel__autoplay:hover {
+  color: var(--c-text);
+  border-color: var(--c-accent);
+  background: rgba(91,127,255,0.1);
+}
+
+/* Toggle pause / play SVG icons via JS-added class */
+.icon--play  { display: none; }
+.icon--pause { display: block; }
+
+.carousel--paused .icon--play  { display: block; }
+.carousel--paused .icon--pause { display: none; }
+
+/* ================================================
+   REDUCED MOTION
+   ================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .carousel__track,
+  .carousel__btn,
+  .carousel__dot,
+  .carousel__figure img,
+  .carousel__autoplay { transition: none; }
+}
+
+/* ================================================
+   RESPONSIVE TWEAKS
+   ================================================ */
+
+/* Tablet: slightly smaller controls are fine, nothing else needed */
+@media (max-width: 768px) {
+  .carousel__btn { opacity: 0.9; }
+}
+
+/* Mobile: move dots below, let bar stack naturally */
+@media (max-width: 480px) {
+  .carousel__bar { flex-direction: row; }
+}

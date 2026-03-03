@@ -31,7 +31,7 @@ h3.sub{
   display: grid;
   grid-template-columns: 1fr, 2fr;
   grid-template-areas: 
-  "h1 h3 h3";
+  "h1 h3";
 }
 
 #about{
@@ -78,11 +78,6 @@ h3.sub{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-areas: 
-  "image image api about about"
-  "image image api 2 2"
-  "youtube history history history 1"
-  "youtube 3 3 3 1"
-  ;
 }
 
 .container{

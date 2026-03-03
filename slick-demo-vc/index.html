@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Carousel</title>
+  <link rel="stylesheet" href="assets/css/carousel.css" />
+</head>
+<body>
+
+  <main class="page">
+    <section
+      class="carousel"
+      aria-label="Photo carousel"
+      aria-roledescription="carousel"
+      tabindex="0"
+    >
+
+      <!-- Live region announces slide changes to screen readers -->
+      <div class="carousel__live" aria-live="polite" aria-atomic="true"></div>
+
+      <!-- Slide track -->
+      <div class="carousel__window">
+        <ul class="carousel__track" role="list">
+
+          <li class="carousel__slide" role="group" aria-roledescription="slide" aria-label="Slide 1 of 5">
+            <figure class="carousel__figure">
+              <img src="https://picsum.photos/seed/forest/1200/600" alt="Sunlight filtering through a lush green forest canopy" loading="eager" draggable="false" />
+              <figcaption>Sunlit Forest</figcaption>
+            </figure>
+          </li>
+
+          <li class="carousel__slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 5" aria-hidden="true">
+            <figure class="carousel__figure">
+              <img src="https://picsum.photos/seed/ocean22/1200/600" alt="Turquoise ocean waves rolling in under a clear sky" loading="lazy" draggable="false" />
+              <figcaption>Ocean Horizon</figcaption>
+            </figure>
+          </li>
+
+          <li class="carousel__slide" role="group" aria-roledescription="slide" aria-label="Slide 3 of 5" aria-hidden="true">
+            <figure class="carousel__figure">
+              <img src="https://picsum.photos/seed/mountains/1200/600" alt="Snow-capped mountains reflected in a still alpine lake" loading="lazy" draggable="false" />
+              <figcaption>Alpine Reflection</figcaption>
+            </figure>
+          </li>
+
+          <li class="carousel__slide" role="group" aria-roledescription="slide" aria-label="Slide 4 of 5" aria-hidden="true">
+            <figure class="carousel__figure">
+              <img src="https://picsum.photos/seed/desert99/1200/600" alt="Golden sand dunes at sunset across a vast desert" loading="lazy" draggable="false" />
+              <figcaption>Desert Dunes</figcaption>
+            </figure>
+          </li>
+
+          <li class="carousel__slide" role="group" aria-roledescription="slide" aria-label="Slide 5 of 5" aria-hidden="true">
+            <figure class="carousel__figure">
+              <img src="https://picsum.photos/seed/citynight/1200/600" alt="City skyline glowing at dusk reflected on a river" loading="lazy" draggable="false" />
+              <figcaption>City at Dusk</figcaption>
+            </figure>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Prev / Next -->
+      <div class="carousel__controls" aria-label="Slide controls">
+        <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Previous slide">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M15.5 19l-7-7 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </button>
+        <button class="carousel__btn carousel__btn--next" type="button" aria-label="Next slide">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M8.5 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Bottom bar: dots + autoplay -->
+      <div class="carousel__bar">
+        <nav class="carousel__dots" aria-label="Slide navigation">
+          <button class="carousel__dot" type="button" aria-label="Go to slide 1" aria-current="true"></button>
+          <button class="carousel__dot" type="button" aria-label="Go to slide 2"></button>
+          <button class="carousel__dot" type="button" aria-label="Go to slide 3"></button>
+          <button class="carousel__dot" type="button" aria-label="Go to slide 4"></button>
+          <button class="carousel__dot" type="button" aria-label="Go to slide 5"></button>
+        </nav>
+
+        <button class="carousel__autoplay" type="button" aria-label="Pause autoplay" aria-pressed="false">
+          <!-- Icons toggled via CSS class -->
+          <svg class="icon icon--pause" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18">
+            <rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/>
+            <rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/>
+          </svg>
+          <svg class="icon icon--play" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18">
+            <path d="M6 4l14 8-14 8V4z" fill="currentColor"/>
+          </svg>
+          <span class="carousel__autoplay-label">Pause</span>
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="assets/js/carousel.js"></script>
+</body>
+</html>
