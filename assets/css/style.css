@@ -1,14 +1,99 @@
-:root{
-    --background-color:#34283F;
-    --accent-violet:#564A70;
-    --accent-lt-purp:#7F5388;
-    --accent-teal:#8BB9C1;
-    --accent-mint:#BDDEDD;
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+
+:root {
+    --background-color: #34283F;
+    --accent-violet: #564A70;
+    --accent-lt-purp: #7F5388;
+    --accent-teal: #8BB9C1;
+    --accent-mint: #BDDEDD;
 }
 
-body{
-    background-color:var(--background-color);
-    font-family: "Cormorant Garamond", serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    background-color: var(--background-color);
+    font-family: "Cormorant Garamond", serif;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--accent-violet);
+}
+
+header h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    color: var(--accent-mint);
+    text-transform: uppercase;
+}
+
+nav {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    list-style: none;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1rem 1.2rem;
+    background-color: var(--accent-violet);
+    color: var(--accent-mint);
+    text-decoration: none;
+    text-align: center;
+    font-family: "Archivo", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+nav ul li a:hover {
+    background-color: transparent;
+    color: var(--accent-teal);
+    border-color: var(--accent-teal);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 185, 193, 0.18);
+}
+
+nav ul li a:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(139, 185, 193, 0.12);
+}
+
+/* Responsive: 2 cols on tablet, 1 on mobile */
+@media (max-width: 640px) {
+    nav ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 860px) {
+    nav ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
