@@ -1,0 +1,63 @@
+:root{
+    --main-text: #8EB6BF;
+    --text-box: #4b594a;
+    --acc-green: #6E7349;
+    --acc-lt-orange: #F26E22;
+    --acc-hunter-org: #d93D1a;
+
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* ------------Responsive Image -------------- */
+img{
+    max-width: 100%;
+}
+/* ------------Utility Classes -------------- */
+
+.container{
+    margin: auto;
+    padding: 40px;
+    max-width: 80%;
+}
+
+/* ------------Style Classes -------------- */
+
+body{
+    font-family: "kepler-std", serif;
+    font-weight: 600;
+    font-style: normal;
+    margin: 0;
+}
+
+p{
+    font-family: "alternate-gothic-atf", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+main{
+    max-width: 100%;
+}
+
+
+#articles{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .post{
+        border: 1px solid #000;
+        padding: 20px;
+    }
+}
+
+aside{
+    &.container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
