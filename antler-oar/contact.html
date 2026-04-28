@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+</head>
+<body>
+    <main>
+        <header class="primary">
+            <h1>Antler & Oar</h1>
+            <nav>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="canoe.html">Canoe Rentals</a></li>
+                    <li><a href="cabin.html">Cabin Rentals</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="gage.html">River Levels</a></li>
+                </ul>
+            </nav>
+        </header>
+        <form id="myform">
+            <div class="formcontainer" onsubmit="return false">
+                <h1>Contact Form</h1>
+                <fieldset id="detail">
+                    <legend>Contact Us!</legend>
+                    <br>
+
+                    <label for="firstName" class="formlabel">First Name*:</label><br>
+                    <input type="text" id="firstName" name="firstName" maxlength="20"
+                    data-rule-required="true"
+                    data-msg-required="First Name is required">
+                    <label for="firstName" class="error" id="firstNameError"></label>
+                    <br>
+
+                    <label for="lastName" class="formlabel">Last Name*:</label><br>
+                    <input type="text" id="lastName" name="lastName" maxlength="20"
+                    data-rule-required="true"
+                    data-msg-required="Last Name is required">
+                    <label for="lastName" class="error" id="lastNameError"></label>
+                    <br><br>
+
+                    <label for="email" class="formlabel">Email*:</label><br>
+                    <input type="email" id="email" name="email"
+                    data-rule-required="true"
+                    data-msg-required="Email is required">
+                    <label for="email" class="error" id="emailError"></label>
+                    <br><br>
+
+                    <label for="telNumber" class="formlabel">Phone Number:</label><br>
+                    <input type="tel" id="telNumber" name="telNumber">
+                    <br><br>
+
+                    <label for="message" class="formlabel">Comments, Questions, or Concerns*:</label><br>
+                    <textarea name="message" id="message" cols="40" rows="8"
+                    data-rule-required="true"
+                    data-msg-required="This section is required"></textarea>
+                    <label for="message" class="error" id="messageError"></label>
+                    <br><br>
+
+                    <input type="button" value="Submit" name="submit" onclick="clearForm();">
+                </fieldset>
+            </div>
+        </form>
+        <aside id="info" class="container">
+            <article class="widget">
+                <iframe width="400" height="350" style="border:0" loading="lazy" allowfullscreen
+                src="https://www.google.com/maps/embed/v1/place?q=36%C2%B001'33.6%22N%2093%C2%B021'54.6%22W&key=AIzaSyA_88tgXm_ZrWXm4tqo0xdZXDc9Ovd0SYo"></iframe>
+            </article>
+            <article class="widget">
+                <ul>
+                    <li>Example</li>
+                    <li>Example</li>
+                    <li>Example</li>
+                    <li>Example</li>
+                </ul>
+            </article>
+        </aside>
+        <footer id="colophon">
+            <h6>&copy; Control Alt Elite | <a href="#top">Top</a></h6>
+        </footer>
+    </main>
+    <script src="assets/js/antler-oar.js"></script>
+</body>
+</html>
