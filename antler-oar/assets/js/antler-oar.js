@@ -1,3 +1,4 @@
+// Carousel function
 $(document).ready(function() {
 
     $('.fade').slick({
@@ -17,6 +18,7 @@ $(document).ready(function() {
 
 });
 
+// River Gage function
 async function getHeight(){
     "use strict";
 
@@ -37,66 +39,6 @@ async function getHeight(){
         // Parse JSON string into object
         let msg = JSON.parse(msgJSONText);
 
-        // Check status
-        if (msgObject.status >= 200 && msgObject.status <= 299) {
-            
-
-            // Check if result was found
-            if (msg.features) {
-                document.getElementById("id0").innerHTML = msg.features[0].properties.monitoring_location_id;
-                
-                // Check if height is > 0
-                if (msg.features[0].properties.value != null){
-                    document.getElementById("heightValue0").innerHTML = msg.features[0].properties.value + " ";
-                }
-                else{
-                    document.getElementById("heightValue0").innerHTML = "0";
-                }
-                document.getElementById("heightUnit0").innerHTML = msg.features[1].properties.unit_of_measure;
-
-
-                document.getElementById("id1").innerHTML = msg.features[1].properties.monitoring_location_id;
-                
-                // Check if height is > 0
-                if (msg.features[1].properties.value != null){
-                    document.getElementById("heightValue1").innerHTML = msg.features[1].properties.value + " ";
-                }
-                else{
-                    document.getElementById("heightValue1").innerHTML = "0";
-                }
-                document.getElementById("heightUnit1").innerHTML = msg.features[1].properties.unit_of_measure;
-
-
-                document.getElementById("id2").innerHTML = msg.features[2].properties.monitoring_location_id;
-                
-                // Check if height is > 0
-                if (msg.features[2].properties.value != null){
-                    document.getElementById("heightValue2").innerHTML = msg.features[2].properties.value + " ";
-                }
-                else{
-                    document.getElementById("heightValue2").innerHTML = "0";
-                }
-                document.getElementById("heightUnit2").innerHTML = msg.features[2].properties.unit_of_measure;
-
-
-                document.getElementById("id3").innerHTML = msg.features[3].properties.monitoring_location_id;
-                
-                // Check if height is > 0
-                if (msg.features[3].properties.value != null){
-                    document.getElementById("heightValue3").innerHTML = msg.features[3].properties.value + " ";
-                }
-                else{
-                    document.getElementById("heightValue3").innerHTML = "0";
-                }
-                document.getElementById("heightUnit3").innerHTML = msg.features[3].properties.unit_of_measure;
-            }
-            else {
-                //Error message
-                alert("No Match Found")
-                return;
-            }
-        }
-
         /* Site 1 */
         /* Information about the PID */
         var sitename = "Ponca"
@@ -109,12 +51,19 @@ async function getHeight(){
 
         /* fLen contains the length of the array (number of values) */
         var fLen = msg.features.length
+
+        // Populate Dates and Values
         for (let i = 0; i < fLen; i++) {
             if (msg.features[i].properties.monitoring_location_id == sitecode) {
                 if (msg.features[i].properties.value != 0){
                     values[i] = msg.features[i].properties.value;
                 }
-                dates[i] = msg.features[i].properties.time;
+                // Convert date to unix milliseconds
+                let unixmillsec = Date.parse(msg.features[i].properties.time);
+                // Create temporary date variable 
+                let tmpdate = new Date(unixmillsec);
+                // Extract the date/time string for a more friendly format
+                dates[i] = tmpdate.toLocaleString();
             }
         }
 
@@ -129,12 +78,18 @@ async function getHeight(){
         var values2 = [];
         let j = 0;
 
+        // Populate Dates and Values
         for (let  i = 0; i < fLen; i++) {
             if (msg.features[i].properties.monitoring_location_id == sitecode2) {
                 if (msg.features[i].properties.value != 0){
                     values2[j] = msg.features[i].properties.value;
                 }
-                dates2[j] = msg.features[i].properties.time;
+                // Convert date to unix milliseconds
+                let unixmillsec2 = Date.parse(msg.features[i].properties.time);
+                // Create temporary date variable 
+                let tmpdate2 = new Date(unixmillsec2);
+                // Extract the date/time string for a more friendly format
+                dates2[i] = tmpdate2.toLocaleString();
                 j++;
             }
         }
@@ -150,17 +105,23 @@ async function getHeight(){
         var values3 = [];
         let k = 0;
 
+        // Populate Dates and Values
         for (let i = 0; i < fLen; i++) {
             if (msg.features[i].properties.monitoring_location_id == sitecode3) {
                 if (msg.features[k].properties.value != 0){
                     values3[k] = msg.features[i].properties.value;
                 }
-                dates3[k] = msg.features[i].properties.time;
+                // Convert date to unix milliseconds
+                let unixmillsec3 = Date.parse(msg.features[i].properties.time);
+                // Create temporary date variable 
+                let tmpdate3 = new Date(unixmillsec3);
+                // Extract the date/time string for a more friendly format
+                dates3[i] = tmpdate3.toLocaleString();
                 k++;
             }
         }
-        /* Put your code here to display a graph of values and dates for Site 1*/
 
+        // Create chart showing data from 3 locations
         var ctx = document.getElementById("chartjs-0");
         var myChart = new Chart(ctx, {
             type: "line",
@@ -196,30 +157,54 @@ async function getHeight(){
                 maintainAspectRatio: true,
                 title: {
                     display: true,
-                    text: 'Ponca Location'
+                    text: 'Buffalo River Water Levels'
+                },
+                scales: {
+                    xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Time/Date'
+                    }
+                    }],
+                    yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'River Height'
+                    }
+                    }]
                 }
-            }
+            },
         });
     }
-}
+};
 
+// Clear graph function
 function clearform(){
     "use strict;"
 
-    document.getElementById("id0").innerHTML = "";
-    document.getElementById("heightValue0").innerHTML = "";
-    document.getElementById("heightUnit0").innerHTML = "";
-    document.getElementById("id1").innerHTML = "";
-    document.getElementById("heightValue1").innerHTML = "";
-    document.getElementById("heightUnit1").innerHTML = "";
-    document.getElementById("id2").innerHTML = "";
-    document.getElementById("heightValue2").innerHTML = "";
-    document.getElementById("heightUnit2").innerHTML = "";
-    document.getElementById("id3").innerHTML = "";
-    document.getElementById("heightValue3").innerHTML = "";
-    document.getElementById("heightUnit3").innerHTML = "";
-
+    // Clear the canvas
     let canvas0 = document.getElementById("chartjs-0");
     let context0 = canvas0.getContext('2d');    
     context0.clearRect(0, 0, canvas0.width, canvas0.height);
+};
+
+// Clear contact form function
+function clearForm() {
+    
+    /* Form Validation */
+    $( "#myform" ).validate({
+    
+    });
+    /* Set all of the form values to blank or false */
+    document.getElementById("firstName").value = "";
+    document.getElementById("lastName").value = "";
+    document.getElementById("firstNameError").innerHTML = "";
+    document.getElementById("lastNameError").innerHTML = "";
+    document.getElementById("email").value = "";
+    document.getElementById("telNumber").value = "";
+    document.getElementById("message").value = "";
+    document.getElementById("emailError").innerHTML = "";
+    document.getElementById("messageError").innerHTML = "";
+
+    document.getElementById("detail").innerHTML = "<h3>Thank you for contacting us! Please allow 48 hours for a response.</h3>";
 }

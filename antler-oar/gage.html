@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>River Gage Page</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+<body onload="getHeight()">
+    <main>
+        <header>
+            <h1>Antler & Oar</h1>
+            <nav>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="canoe.html">Canoe Rentals</a></li>
+                    <li><a href="cabin.html">Cabin Rentals</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="gage.html">River Levels</a></li>
+                </ul>
+            </nav>
+        </header>
+        <form id="myform" onsubmit="return false">
+            <div class="formcontainer">
+                <h2>Buffalo River Gage</h2>
+                <canvas id="chartjs-0" width="600" height="600"></canvas>
+            </div>
+        </form>
+        <aside id="info" class="container">
+            <article class="widget">
+                <iframe width="400" height="350" style="border:0" loading="lazy" allowfullscreen
+                src="https://www.google.com/maps/embed/v1/place?q=36%C2%B001'33.6%22N%2093%C2%B021'54.6%22W&key=AIzaSyA_88tgXm_ZrWXm4tqo0xdZXDc9Ovd0SYo"></iframe>
+            </article>
+            <article class="widget">
+                <ul>
+                    <li>Example</li>
+                    <li>Example</li>
+                    <li>Example</li>
+                    <li>Example</li>
+                </ul>
+            </article>
+        </aside>
+        <footer id="colophon">
+            <h6>&copy; Control Alt Elite | <a href="#top">Top</a></h6>
+        </footer>
+    </main>
+    <script src="assets/js/antler-oar.js"></script>
+</body>
+</html>
