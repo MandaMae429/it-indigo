@@ -84,6 +84,8 @@ nav ul li a:active {
     box-shadow: 0 3px 10px rgba(139, 185, 193, 0.12);
 }
 
+
+
 /* Responsive: 2 cols on tablet, 1 on mobile */
 @media (max-width: 640px) {
     nav ul {
