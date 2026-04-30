@@ -25,7 +25,7 @@ function setupCalculator(config) {
     }
 
     const total = config.calculate(value);
-    output.textContent = $${total.toFixed(2)};
+    output.textContent = '$${total.toFixed(2)}';
     box.classList.add("active");
   });
 }
@@ -171,7 +171,7 @@ quantitySelect.addEventListener("change", () => {
   }
 
   const total = qty * pricePerCanoe * (1 + taxRate);
-  totalOutput.textContent = $${total.toFixed(2)};
+  totalOutput.textContent = '$${total.toFixed(2)}';
   canoeBox.classList.add("active");
 });
 
@@ -223,7 +223,7 @@ const RiverMap = (() => {
       const tick = document.createElement("div");
       tick.className = "river-tick";
 
-      tick.style.left = ${position(i, tickCount)}%;
+      tick.style.left = '${position(i, tickCount)}%';
       tick.innerHTML = <span>${i * 10}</span>; // visual scale only
 
       riverEl.appendChild(tick);
@@ -236,7 +236,7 @@ const RiverMap = (() => {
       const label = document.createElement("div");
       label.className = "river-label";
 
-      label.style.left = ${position(i, labelCount)}%;
+      label.style.left = '${position(i, labelCount)}%';
       label.innerHTML = <small>${name}</small>;
 
       riverEl.appendChild(label);
@@ -265,7 +265,7 @@ function renderSelection() {
 
   const dot = document.createElement("div");
   dot.className = "river-dot";
-  dot.style.left = ${percent}%;
+  dot.style.left = '${percent}%';
   dot.innerHTML = <div class="circle"></div>;
   riverEl.appendChild(dot);
 

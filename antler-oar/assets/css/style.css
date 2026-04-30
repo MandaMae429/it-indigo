@@ -21,9 +21,11 @@ img{
 /* ------------Utility Classes -------------- */
 
 .container{
-    margin: auto;
+    margin: 15px auto 15px auto;
     padding: 40px;
     max-width: 80%;
+    background-color: var(--acc-green);
+    border-radius: 14px;
     }
 
 #textbox{
@@ -34,6 +36,7 @@ img{
   margin: 40px auto;
   padding:20px;
   border-radius: 14px;
+  text-align: center;
 }
 
 /* ------------Style Classes -------------- */
@@ -58,15 +61,24 @@ main{
 }
 
 header.primary{
-    background-color:var(--acc-lt-orange) ; 
+    background-color: var(--acc-lt-orange) ; 
     color:var(--text-box);
-    padding: 60px 40px 20px 20px; 
-   
+   background-image: url(../img/header.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
   }
 
+ 
+
   .logo{
-float: left; /* or float: right */
-    margin-right: 1rem; /* adds spacing around the logo */
+    object-fit: cover;
+    position: relative;
+    left: 60px;
+    height: 150px;
+    width: 100px;
+    padding: 0 0 0 0;
+  
   }
 
   h1 {
@@ -86,6 +98,9 @@ float: left; /* or float: right */
   nav{
     max-width:100%;
     margin:auto;
+    float: right;
+    position: relative;
+    top: 100px;
   }
 
   ul li{
@@ -93,7 +108,8 @@ float: left; /* or float: right */
   }
 
   nav ul{
-    padding:10px 0 0 0;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction:row;
     justify-content:flex-end;
@@ -135,7 +151,9 @@ float: left; /* or float: right */
 }
 
 
-
+iframe{
+  float: right;
+}
 
 #articles{
     display: grid;
@@ -157,6 +175,7 @@ float: left; /* or float: right */
 
     .post a{
         color: var(--main-text);
+        text-decoration: none;
     }
 }
 
@@ -168,14 +187,56 @@ aside{
     }
 }
 
+.map{
+  grid-area: map;
+}
 
+h6{
+  grid-area: h6;
+}
 
+#address{
+  grid-area: address;
+}
+
+.formcontainer{
+  canvas{
+    margin: auto;
+    padding-bottom: 40px;
+  }
+  h2{
+    text-align: center;
+  }
+}
 footer{
-    background-color: var(--acc-lt-orange);
-    display: flex;
-    align-items: flex-wrap;
+    /* background-color: var(--acc-lt-orange); */
+    background-image: url(../img/footer.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: bottom;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". . map"
+    "h6 . address";
     padding: 25px 0 25px 50px;
-    justify-content: space-evenly;
+    align-items: end;
+    color: #fff;
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+    
+}
+
+
+
+#story-heading{
+  text-align:center;
+}
+
+#mission-heading{
+  text-align:center;
 }
 
 /*-------CABIN----------*/
