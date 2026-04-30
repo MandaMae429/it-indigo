@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Website for canoe rental company in Ponca" />
+    <meta name="keywords" content="HTML, CSS,JavaScript, AJAX, jQuery" />
+    <meta name="author" content="Ryan Snyder" />
+    <title>Bear Ridge Cabin Rentals</title>
+    <meta name="author" content="Christine Jones" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/afk1spu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/txi5knf.css">
+
+
+
+</head>
+
+<body>
+    <main>
+        <header class="primary">
+            <h1>Antler & Oar</h1>
+           <a href="index.html"> <img src="assets/img/logo.svg" alt="logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="canoe.html">Canoe Rentals</a></li>
+                    <li><a href="cabin.html">Cabin Rentals</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="gage.html">River Levels</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+</head>
+
+<body>
+
+
+<main class="container">
+
+<!-- OVERVIEW -->
+<section class="overview">
+  <h2>Cabin Overview</h2>
+
+  <div class="card">
+    <p>
+      Bear Ridge offers two guests a cozy, fully furnished cabin for a romantic getaway in upper Buffalo River country.
+      The cabin has a main floor and sleeping loft with queen-size bed. We are pleased to offer complimentary WIFI.
+    </p>
+
+    <p>
+      The kitchen includes appliances, cookware, coffee maker, and dishwasher. The bathroom includes a stone walk-in shower.
+    </p>
+  </div>
+</section>
+
+<!-- CAROUSEL + AMENITIES -->
+<section class="card carousel-card">
+
+  <h2 class="carousel-title">Bear Ridge at its Finest</h2>
+
+  <!-- CAROUSEL -->
+  <div class="cabin-carousel">
+    <div class="carousel-track" id="carouselTrack">
+
+      <img src="assets/img/outside1.webp" class="carousel-image" alt="Cabin exterior">
+      <img src="assets/img/living1.avif" class="carousel-image" alt="Living area">
+      <img src="assets/img/bedroom1.jpg" class="carousel-image" alt="Bedroom">
+      <img src="assets/img/firepit2.jpg" class="carousel-image" alt="Fire pit">
+
+    </div>
+  </div>
+
+  <!-- DOTS -->
+  <div class="carousel-dots">
+    <span class="dot active" data-index="0"></span>
+    <span class="dot" data-index="1"></span>
+    <span class="dot" data-index="2"></span>
+    <span class="dot" data-index="3"></span>
+  </div>
+
+  <!-- AMENITIES -->
+  <h2 class="amenities-title">Cabin Amenities</h2>
+
+  <div class="amenities-grid">
+
+    <div class="amenity-card">
+      <h3>Comfort</h3>
+      <ul>
+        <li>Hot tub</li>
+        <li>Full HVAC</li>
+        <li>42” TV</li>
+        <li>WiFi included</li>
+      </ul>
+    </div>
+
+    <div class="amenity-card">
+      <h3>Outdoor</h3>
+      <ul>
+        <li>Stone firepit</li>
+        <li>Creekside seating</li>
+        <li>Trail access nearby</li>
+        <li>Firewood provided</li>
+      </ul>
+    </div>
+
+    <div class="amenity-card">
+      <h3>Kitchen</h3>
+      <ul>
+        <li>Full kitchen</li>
+        <li>Dishwasher</li>
+        <li>Coffee maker</li>
+        <li>Cookware included</li>
+      </ul>
+    </div>
+
+  </div>
+<!-- CABIN CALCULATOR MOVED HERE -->
+<div class="calculator-wrapper">
+
+  <h2 class="calculator-title">Bear Ridge Cabin Rental</h2>
+
+  <div class="float-calculator card">
+
+    <label for="days">Number of Days</label>
+
+    <select id="days">
+      <option value="">Select</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+
+    <p class="rate-note">$195 per night or $1195 per week plus tax</p>
+
+    <div id="cabin-result" class="result-box">
+      <h3>Total Cost</h3>
+      <p class="price" id="cabin-total">$0.00</p>
+    </div>
+<a href="#" class="reserve-btn">Reserve Today</a>
+  </div>
+</div>
+</section>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img" alt="Expanded cabin view">
+</div>
+
+<script src="antler-oar.js" defer></script>
+</body>
+</html>
+
