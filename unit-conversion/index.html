@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit Converter (AJAX)</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+ 
+  <h1>Unit Converter (AJAX)</h1>
+  <hr class="heading-rule" />
+ 
+  <fieldset>
+    <legend>Unit Converter (AJAX)</legend>
+ 
+    <table class="form-table">
+      <tbody>
+ 
+        <!-- From Value -->
+        <tr>
+          <td class="label-cell">
+            <label for="from-value">From Value:</label>
+          </td>
+          <td>
+            <input
+              type="text"
+              id="from-value"
+              name="FromValue"
+              autocomplete="off"
+            />
+            <span class="error-msg" id="from-value-error">Value is Required</span>
+          </td>
+        </tr>
+ 
+        <!-- From Unit -->
+        <tr>
+          <td class="label-cell">From Unit:</td>
+          <td>
+            <div class="radio-group" role="radiogroup" aria-label="From Unit">
+              <label>
+                <input type="radio" name="FromUnit" value="cm" />
+                centimeters
+              </label>
+              <label>
+                <input type="radio" name="FromUnit" value="m" />
+                meters
+              </label>
+              <label>
+                <input type="radio" name="FromUnit" value="km" />
+                kilometers
+              </label>
+              <label>
+                <input type="radio" name="FromUnit" value="in" />
+                inches
+              </label>
+              <label>
+                <input type="radio" name="FromUnit" value="ft" />
+                feet
+              </label>
+              <label>
+                <input type="radio" name="FromUnit" value="yd" />
+                yards
+              </label>
+              <label>
+                <input type="radio" name="FromUnit" value="mi" />
+                miles
+              </label>
+            </div>
+            <span class="error-msg" id="from-unit-error">From Unit is Required</span>
+          </td>
+        </tr>
+ 
+        <!-- To Unit -->
+        <tr>
+          <td class="label-cell">To Unit:</td>
+          <td>
+            <div class="radio-group" role="radiogroup" aria-label="To Unit">
+              <label>
+                <input type="radio" name="ToUnit" value="cm" />
+                centimeters
+              </label>
+              <label>
+                <input type="radio" name="ToUnit" value="m" />
+                meters
+              </label>
+              <label>
+                <input type="radio" name="ToUnit" value="km" />
+                kilometers
+              </label>
+              <label>
+                <input type="radio" name="ToUnit" value="in" />
+                inches
+              </label>
+              <label>
+                <input type="radio" name="ToUnit" value="ft" />
+                feet
+              </label>
+              <label>
+                <input type="radio" name="ToUnit" value="yd" />
+                yards
+              </label>
+              <label>
+                <input type="radio" name="ToUnit" value="mi" />
+                miles
+              </label>
+            </div>
+            <span class="error-msg" id="to-unit-error">To Unit is Required</span>
+          </td>
+        </tr>
+ 
+        <!-- To Value (result) -->
+        <tr>
+          <td class="label-cell">To Value:</td>
+          <td>
+            <span id="to-value-display"></span>
+          </td>
+        </tr>
+ 
+      </tbody>
+    </table>
+ 
+    <!-- API / network error -->
+    <span class="error-msg" id="api-error"></span>
+ 
+    <!-- Buttons -->
+    <div class="btn-row">
+      <button type="button" id="btn-calculate">Calculate</button>
+      <button type="button" id="btn-clear">Clear</button>
+    </div>
+ 
+  </fieldset>
+ 
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
