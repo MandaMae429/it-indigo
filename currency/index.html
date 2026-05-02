@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author "content="Amanda Myers">
+  <title>Currency Value History</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+ 
+  <h1>Currency Value History</h1>
+ 
+  <!-- ── Input Form ──────────────────────────────────────── -->
+  <table class="form-table">
+    <tbody>
+ 
+      <!-- Base Currency -->
+      <tr>
+        <td class="label-cell">
+          <label for="base-currency">Base Currency:</label>
+        </td>
+        <td>
+          <select id="base-currency" name="BaseCurrency">
+            <option value="">-- Select --</option>
+          </select>
+          <span class="error-msg" id="base-currency-error"></span>
+        </td>
+      </tr>
+ 
+      <!-- Convert to Currency -->
+      <tr>
+        <td class="label-cell">
+          <label for="convert-currency">Convert to Currency:</label>
+        </td>
+        <td>
+          <select id="convert-currency" name="ConvertCurrency">
+            <option value="">-- Select --</option>
+          </select>
+          <span class="error-msg" id="convert-currency-error"></span>
+        </td>
+      </tr>
+ 
+      <!-- From Date -->
+      <tr>
+        <td class="label-cell">
+          <label for="from-date">From Date:</label>
+        </td>
+        <td>
+          <input
+            type="text"
+            id="from-date"
+            name="FromDate"
+            placeholder="MM/DD/YYYY"
+            maxlength="10"
+            autocomplete="off"
+          />
+          <span class="error-msg" id="from-date-error"></span>
+        </td>
+      </tr>
+ 
+      <!-- To Date -->
+      <tr>
+        <td class="label-cell">
+          <label for="to-date">To Date:</label>
+        </td>
+        <td>
+          <input
+            type="text"
+            id="to-date"
+            name="ToDate"
+            placeholder="MM/DD/YYYY"
+            maxlength="10"
+            autocomplete="off"
+          />
+          <span class="error-msg" id="to-date-error"></span>
+        </td>
+      </tr>
+ 
+      <!-- Date range cross-field error -->
+      <tr>
+        <td></td>
+        <td>
+          <span class="error-msg row-error" id="date-range-error"></span>
+        </td>
+      </tr>
+ 
+    </tbody>
+  </table>
+ 
+  <!-- ── Buttons ─────────────────────────────────────────── -->
+  <div class="btn-row">
+    <button type="button" id="btn-show">Show Results</button>
+    <button type="button" id="btn-clear">Clear</button>
+  </div>
+ 
+  <hr class="divider" />
+ 
+  <!-- ── Status messages ─────────────────────────────────── -->
+  <p id="loading-msg">Loading data, please wait…</p>
+  <p id="api-error" class="error-msg"></p>
+ 
+  <!-- ── Chart Section ───────────────────────────────────── -->
+  <section id="chart-section" aria-label="Exchange Rate Chart">
+    <h2 id="chart-title"></h2>
+    <div id="chart-wrapper">
+      <canvas id="myChart"></canvas>
+    </div>
+  </section>
+ 
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
