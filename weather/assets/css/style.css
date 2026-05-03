@@ -1,0 +1,428 @@
+/* =============================================
+   Petit Jean State Park — Temperature Forecast
+   styles.css
+   ============================================= */
+ 
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2c2c2a;
+  background: #f5f3ef;
+  min-height: 100vh;
+}
+ 
+/* ---------- Header ---------- */
+.site-header {
+  position: relative;
+  background: #1a3a2a;
+  color: #fff;
+  padding: 4rem 2rem 3.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+ 
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 60%, rgba(30,80,50,0.6) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 30%, rgba(10,50,30,0.5) 0%, transparent 60%);
+  pointer-events: none;
+}
+ 
+/* Subtle tree silhouette via CSS */
+.site-header::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #f5f3ef;
+  clip-path: polygon(
+    0% 100%, 0% 60%, 3% 55%, 6% 60%, 9% 40%, 12% 55%, 15% 35%,
+    18% 50%, 21% 30%, 24% 48%, 27% 25%, 30% 45%, 33% 32%, 36% 50%,
+    39% 28%, 42% 46%, 45% 33%, 48% 50%, 51% 30%, 54% 48%, 57% 35%,
+    60% 52%, 63% 38%, 66% 55%, 69% 40%, 72% 58%, 75% 42%, 78% 60%,
+    81% 44%, 84% 62%, 87% 48%, 90% 65%, 93% 50%, 96% 67%, 100% 55%,
+    100% 100%
+  );
+}
+ 
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+ 
+.park-eyebrow {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8ecfa8;
+  margin-bottom: 0.75rem;
+}
+ 
+.site-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+ 
+.header-sub {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0.5rem;
+}
+ 
+/* ---------- Layout ---------- */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+ 
+/* ---------- Section Titles ---------- */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1a3a2a;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #3b6d11;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+ 
+.unit-note {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #5f5e5a;
+}
+ 
+/* ---------- Search Section ---------- */
+.search-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  border: 1px solid #d3d1c7;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+ 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+ 
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #444441;
+}
+ 
+.input-row {
+  display: flex;
+  gap: 0.75rem;
+}
+ 
+input[type="text"] {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  border: 1.5px solid #b4b2a9;
+  border-radius: 8px;
+  background: #fafaf8;
+  color: #2c2c2a;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+ 
+input[type="text"]:focus {
+  border-color: #3b6d11;
+  box-shadow: 0 0 0 3px rgba(59,109,17,0.15);
+}
+ 
+input[type="text"]::placeholder {
+  color: #b4b2a9;
+}
+ 
+button[type="submit"] {
+  padding: 0.65rem 1.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: #27500a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s;
+}
+ 
+button[type="submit"]:hover {
+  background: #3b6d11;
+}
+ 
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+ 
+button[type="submit"]:disabled {
+  background: #888780;
+  cursor: not-allowed;
+}
+ 
+/* ---------- Error Messages ---------- */
+.field-hint {
+  font-size: 0.8rem;
+  color: #5f5e5a;
+  margin-top: 0.4rem;
+}
+ 
+.field-hint strong {
+  color: #27500a;
+}
+ 
+.error-msg {
+  font-size: 0.875rem;
+  color: #a32d2d;
+  background: #fcebeb;
+  border: 1px solid #f7c1c1;
+  border-radius: 6px;
+  padding: 0.5rem 0.85rem;
+  margin-top: 0.25rem;
+}
+ 
+.error-msg.hidden { display: none; }
+ 
+/* ---------- Location Card ---------- */
+.location-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  border: 1px solid #d3d1c7;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+ 
+.loc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem 1.5rem;
+}
+ 
+.loc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+ 
+.loc-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5f5e5a;
+}
+ 
+.loc-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1a3a2a;
+}
+ 
+/* ---------- Loading ---------- */
+.loading-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #d3d1c7;
+  color: #5f5e5a;
+  font-size: 0.9rem;
+}
+ 
+.loading-wrap.hidden { display: none; }
+ 
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid #c0dd97;
+  border-top-color: #3b6d11;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+ 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+ 
+/* ---------- Chart ---------- */
+#chartSection {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  border: 1px solid #d3d1c7;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+ 
+.chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 340px;
+}
+ 
+/* ---------- Table ---------- */
+#tableSection {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  border: 1px solid #d3d1c7;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+ 
+.table-wrap {
+  overflow-x: auto;
+  max-height: 520px;
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 1px solid #d3d1c7;
+}
+ 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+ 
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #1a3a2a;
+  color: #fff;
+}
+ 
+thead th {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+ 
+tbody tr:nth-child(even) {
+  background: #f5f3ef;
+}
+ 
+tbody tr:nth-child(odd) {
+  background: #fff;
+}
+ 
+tbody tr:hover {
+  background: #eaf3de;
+}
+ 
+tbody td {
+  padding: 0.55rem 1rem;
+  color: #2c2c2a;
+  border-bottom: 1px solid #f1efe8;
+}
+ 
+td:first-child {
+  color: #888780;
+  font-size: 0.8rem;
+  width: 50px;
+}
+ 
+td:last-child {
+  font-weight: 500;
+  color: #1a3a2a;
+}
+ 
+/* Cold/warm color coding */
+td.temp-cold { color: #185fa5; }
+td.temp-cool  { color: #0f6e56; }
+td.temp-mild  { color: #3b6d11; }
+td.temp-warm  { color: #ba7517; }
+td.temp-hot   { color: #a32d2d; }
+ 
+/* ---------- Hidden Utility ---------- */
+.hidden { display: none !important; }
+ 
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  color: #888780;
+  border-top: 1px solid #d3d1c7;
+  background: #fff;
+}
+ 
+.site-footer a {
+  color: #3b6d11;
+  text-decoration: none;
+}
+ 
+.site-footer a:hover {
+  text-decoration: underline;
+}
+ 
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .site-header {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+ 
+  .input-row {
+    flex-direction: column;
+  }
+ 
+  button[type="submit"] {
+    width: 100%;
+  }
+ 
+  .search-section,
+  .location-card,
+  #chartSection,
+  #tableSection {
+    padding: 1.25rem 1rem;
+  }
+ 
+  .chart-wrap {
+    height: 260px;
+  }
+}

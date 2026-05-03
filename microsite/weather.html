@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Jean State Park — Temperature Forecast</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+ 
+  <header class="site-header">
+    <div class="header-overlay"></div>
+    <div class="header-content">
+      <span class="park-eyebrow">Arkansas State Parks</span>
+      <h1>Petit Jean State Park</h1>
+      <p class="header-sub">Morrilton, Arkansas &mdash; Temperature Forecast</p>
+    </div>
+  </header>
+ 
+  <main class="container">
+ 
+    <!-- Search Form -->
+    <section class="search-section" aria-labelledby="search-heading">
+      <h2 id="search-heading" class="section-title">Location Search</h2>
+      <form id="locationForm" novalidate>
+        <div class="form-group">
+          <label for="locationInput">Enter a location</label>
+          <div class="input-row">
+            <input
+              type="text"
+              id="locationInput"
+              name="location"
+              placeholder="e.g. Morrilton, Arkansas"
+              value="Morrilton, Arkansas"
+              autocomplete="off"
+              aria-required="true"
+              aria-describedby="locationError"
+            />
+            <button type="submit" id="searchBtn">Get Forecast</button>
+          </div>
+          <p class="error-msg hidden" id="locationError" role="alert" aria-live="polite"></p>
+          <p class="field-hint">Enter a city name &mdash; e.g. <strong>Morrilton, Arkansas</strong> for Petit Jean State Park</p>
+        </div>
+      </form>
+    </section>
+ 
+    <!-- Location Details -->
+    <section id="locationSection" class="hidden" aria-labelledby="loc-heading">
+      <h2 id="loc-heading" class="section-title">Location Details</h2>
+      <div class="location-card" id="locationCard">
+        <div class="loc-grid">
+          <div class="loc-field">
+            <span class="loc-label">Name</span>
+            <span class="loc-value" id="locName"></span>
+          </div>
+          <div class="loc-field">
+            <span class="loc-label">Region</span>
+            <span class="loc-value" id="locAdmin1"></span>
+          </div>
+          <div class="loc-field">
+            <span class="loc-label">Country</span>
+            <span class="loc-value" id="locCountry"></span>
+          </div>
+          <div class="loc-field">
+            <span class="loc-label">Latitude</span>
+            <span class="loc-value" id="locLat"></span>
+          </div>
+          <div class="loc-field">
+            <span class="loc-label">Longitude</span>
+            <span class="loc-value" id="locLon"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="hidden loading-wrap" aria-live="polite" aria-label="Loading forecast">
+      <div class="spinner"></div>
+      <p>Fetching forecast data&hellip;</p>
+    </div>
+ 
+    <!-- API Error -->
+    <p class="error-msg hidden" id="apiError" role="alert" aria-live="polite"></p>
+ 
+    <!-- Chart Section -->
+    <section id="chartSection" class="hidden" aria-labelledby="chart-heading">
+      <h2 id="chart-heading" class="section-title">Temperature Line Chart <span class="unit-note">(°F, 7-day hourly)</span></h2>
+      <div class="chart-wrap">
+        <canvas id="tempChart" role="img" aria-label="Hourly temperature forecast line chart"></canvas>
+      </div>
+    </section>
+ 
+    <!-- Table Section -->
+    <section id="tableSection" class="hidden" aria-labelledby="table-heading">
+      <h2 id="table-heading" class="section-title">Hourly Forecast Table <span class="unit-note">(°F)</span></h2>
+      <div class="table-wrap">
+        <table id="forecastTable" aria-label="Hourly temperature forecast">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Date &amp; Time</th>
+              <th scope="col">Temperature (°F)</th>
+            </tr>
+          </thead>
+          <tbody id="forecastTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+ 
+  </main>
+ 
+  <footer class="site-footer">
+    <p>Weather data provided by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a> &mdash; free &amp; open-source weather API.</p>
+  </footer>
+ 
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
+ 
