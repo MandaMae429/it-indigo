@@ -1,79 +1,198 @@
+Index · HTML
+Copy
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.typekit.net/mrb2ceh.css">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <title>Petit Jean State Park</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petit Jean State Park — Arkansas' First State Park</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
-<header>
-        <h1 class="primary">Petit Jean State Park</h1>
-        <h3 class="sub">Arkansas' First State Park</h3>
-</header>
-<main>
-        <section class="bento">
-
-            <article class="cell cell--1">
-                <header>
-                   <h2>Title One</h2>
-                </header>
-                <p>Placeholder content for cell one.</p>
-            </article>
-
-            <article class="cell cell--2">
-                <header>
-                    <h2>Title Two</h2>
-                </header>
-                <p>Placeholder content for cell two.</p>
-            </article>
-
-            <article class="cell cell--3">
-                <header>
-                    <h2>Title Three</h2>
-                </header>
-                <p>Placeholder content for cell three.</p>
-            </article>
-
-            <article class="cell cell--4">
-                <header>
-                    <h2>Title Four</h2>
-                </header>
-                <p>Placeholder content for cell four.</p>
-            </article>
-
-            <article class="cell cell--5">
-                <header>
-                    <h2> <a href="history.html" target="_blank">The Legend of Petit Jean</a></h2>
-                </header>
-                <p>What really happened on the mountain all those years ago</p>
-            </article>
-
-            <article class="cell cell--6">
-                <header>
-                    <h2>Title Six</h2>
-                </header>
-                <p>Placeholder content for cell six.</p>
-            </article>
-
-            <article class="cell cell--7">
-                <header>
-                    <h2>Title Seven</h2>
-                </header>
-                <p>Placeholder content for cell seven.</p>
-            </article>
-
-            <article class="cell cell--8">
-                <header>
-                    <h2>Title Eight</h2>
-                </header>
-                <p>Placeholder content for cell eight.</p>
-            </article>
-
-        </section>
-    
-    
-</main>
+ 
+  <!-- ══ HERO HEADER ════════════════════════════ -->
+  <header class="home-header">
+ 
+    <div class="home-header__nav-wrap">
+      <div class="site-header" style="background:rgba(11,28,21,0.5);border-bottom-color:rgba(45,102,69,0.2);">
+        <a href="index.html" class="site-header__logo">
+          <img src="assets/img/nps-logo.png" alt="National Park Service Logo">
+          <div class="site-header__title">
+            <span class="name">Petit Jean State Park</span>
+            <span class="sub">Arkansas' First State Park</span>
+          </div>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="history.html">History</a>
+          <a href="things-to-do.html">Things To Do</a>
+          <a href="trails.html">Trails</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="visitor-info.html">Visitor Info</a>
+          <a href="weather.html">Weather</a>
+        </nav>
+      </div>
+    </div>
+ 
+    <div class="home-header__bg"></div>
+    <div class="home-header__overlay"></div>
+ 
+    <div class="home-header__content">
+      <p class="home-header__eyebrow">Arkansas' First State Park · Est. 1923</p>
+      <h1 class="home-header__title">
+        Where the<br>
+        <em>Mountain Meets</em><br>
+        the Sky
+      </h1>
+      <p class="home-header__sub">
+        Explore cedar canyons, ancient bluffs, and 2,400 acres of untouched
+        natural wonder atop Petit Jean Mountain.
+      </p>
+    </div>
+ 
+    <div class="home-header__scroll">
+      <span>Explore</span>
+      <div class="scroll-line"></div>
+    </div>
+ 
+  </header>
+ 
+  <!-- ══ BENTO GRID ═════════════════════════════ -->
+  <main>
+    <section class="bento-section">
+ 
+      <div class="bento-intro reveal">
+        <span class="section-label">Discover the Park</span>
+        <h2 class="section-title">Everything Petit Jean</h2>
+      </div>
+ 
+      <div class="bento">
+ 
+        <!-- 1: History -->
+        <a href="history.html" class="cell cell--1 reveal">
+          <div class="cell__bg"></div>
+          <div class="cell__overlay"></div>
+          <div class="cell__arrow">↗</div>
+          <div class="cell__content">
+            <span class="cell__tag">Legend</span>
+            <h2 class="cell__title">The Legend of Petit Jean</h2>
+            <p class="cell__desc">A young woman who crossed an ocean for love — and left her name on a mountain.</p>
+          </div>
+        </a>
+ 
+        <!-- 2: Weather -->
+        <a href="weather.html" class="cell cell--2 reveal">
+          <div class="cell__bg"></div>
+          <div class="cell__overlay"></div>
+          <div class="cell__arrow">↗</div>
+          <div class="cell__content">
+            <span class="cell__tag">Live</span>
+            <h2 class="cell__title">Mountain Weather</h2>
+            <p class="cell__desc">Current conditions on the mountain.</p>
+          </div>
+        </a>
+ 
+        <!-- 3: Things To Do (wide feature) -->
+        <a href="things-to-do.html" class="cell cell--3 cell--feature reveal">
+          <div class="cell__bg"></div>
+          <div class="cell__overlay"></div>
+          <div class="cell__arrow">↗</div>
+          <div class="cell__content">
+            <span class="cell__tag">Activities</span>
+            <h2 class="cell__title">Things To Do</h2>
+            <p class="cell__desc">Hiking, fishing, swimming, camping &amp; more across 2,400 acres.</p>
+          </div>
+        </a>
+ 
+        <!-- 4: Gallery (big center) -->
+        <a href="gallery.html" class="cell cell--4 cell--feature reveal">
+          <div class="cell__bg"></div>
+          <div class="cell__overlay"></div>
+          <div class="cell__arrow">↗</div>
+          <div class="cell__content">
+            <span class="cell__tag">Gallery</span>
+            <h2 class="cell__title">Photo Gallery</h2>
+            <p class="cell__desc">Cedar Falls, canyons, wildflowers, and the mountain at every season.</p>
+          </div>
+        </a>
+ 
+        <!-- 5: Trails -->
+        <a href="trails.html" class="cell cell--5 reveal">
+          <div class="cell__bg"></div>
+          <div class="cell__overlay"></div>
+          <div class="cell__arrow">↗</div>
+          <div class="cell__content">
+            <span class="cell__tag">Hiking</span>
+            <h2 class="cell__title">Trail Maps</h2>
+            <p class="cell__desc">20+ miles of marked trails for every skill level.</p>
+          </div>
+        </a>
+ 
+        <!-- 6: Visitor Info -->
+        <a href="visitor-info.html" class="cell cell--6 reveal">
+          <div class="cell__bg"></div>
+          <div class="cell__overlay"></div>
+          <div class="cell__arrow">↗</div>
+          <div class="cell__content">
+            <span class="cell__tag">Info</span>
+            <h2 class="cell__title">Visitor Info &amp; FAQ</h2>
+            <p class="cell__desc">Hours, fees, and everything you need.</p>
+          </div>
+        </a>
+ 
+        <!-- 7: YouTube (wide) -->
+        <a href="https://www.youtube.com/@PetitJeanStatePark" target="_blank" rel="noopener" class="cell cell--7 reveal">
+          <div class="cell__bg"></div>
+          <div class="cell__overlay"></div>
+          <div class="cell__arrow">↗</div>
+          <div class="cell__content">
+            <span class="cell__tag cell__tag--youtube">▶ YouTube</span>
+            <h2 class="cell__title">Watch the Park Come Alive</h2>
+            <p class="cell__desc">Trail guides, park stories, and seasonal features.</p>
+          </div>
+        </a>
+ 
+        <!-- 8: Instagram -->
+        <a href="https://www.instagram.com/petitjeanstatepark/" target="_blank" rel="noopener" class="cell cell--8 reveal">
+          <div class="cell__bg"></div>
+          <div class="cell__overlay"></div>
+          <div class="cell__arrow">↗</div>
+          <div class="cell__content">
+            <span class="cell__tag cell__tag--instagram">✦ Instagram</span>
+            <h2 class="cell__title">Follow Us</h2>
+            <p class="cell__desc">Daily shots from the mountain.</p>
+          </div>
+        </a>
+ 
+        <!-- 9: Wildlife -->
+        <a href="things-to-do.html" class="cell cell--9 reveal">
+          <div class="cell__bg"></div>
+          <div class="cell__overlay"></div>
+          <div class="cell__arrow">↗</div>
+          <div class="cell__content">
+            <span class="cell__tag">Wildlife</span>
+            <h2 class="cell__title">Wildlife Spotting</h2>
+            <p class="cell__desc">Deer, eagles, and more.</p>
+          </div>
+        </a>
+ 
+      </div>
+    </section>
+  </main>
+ 
+  <!-- ══ FOOTER ═════════════════════════════════ -->
+  <footer class="site-footer">
+    <p>© 2025 Petit Jean State Park ·
+      <a href="https://www.arkansasstateparks.com/parks/petit-jean-state-park" target="_blank">Arkansas State Parks</a>
+    </p>
+  </footer>
+ 
+  <script src="assets/js/main.js"></script>
+ 
 </body>
 </html>

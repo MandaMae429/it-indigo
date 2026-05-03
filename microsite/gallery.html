@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery — Petit Jean State Park</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/gallery.css">
+</head>
+<body>
+ 
+  <!-- ══ HEADER ════════════════════════════════ -->
+  <header class="site-header">
+    <a href="index.html" class="site-header__logo">
+      <img src="assets/img/nps-logo.png" alt="National Park Service Logo">
+      <div class="site-header__title">
+        <span class="name">Petit Jean State Park</span>
+        <span class="sub">Arkansas' First State Park</span>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="history.html">History</a>
+      <a href="things-to-do.html">Things To Do</a>
+      <a href="trails.html">Trails</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="visitor-info.html">Visitor Info</a>
+      <a href="weather.html">Weather</a>
+    </nav>
+  </header>
+ 
+  <!-- ══ HERO ══════════════════════════════════ -->
+  <div class="page-hero">
+    <div class="page-hero__bg gallery-hero__bg"></div>
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <span class="page-hero__eyebrow">Through the Lens</span>
+      <h1 class="page-hero__title">Photo Gallery</h1>
+    </div>
+  </div>
+ 
+  <!-- ══ CONTENT ═══════════════════════════════ -->
+  <main class="page-content">
+ 
+    <div class="reveal">
+      <span class="section-label">The Park in Photos</span>
+      <h2 class="section-title">Every Season, Every Trail</h2>
+    </div>
+ 
+    <div class="filter-tabs reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="waterfall">Waterfalls</button>
+      <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+      <button class="filter-btn" data-filter="trails">Trails</button>
+      <button class="filter-btn" data-filter="scenic">Scenic</button>
+      <button class="filter-btn" data-filter="seasons">Seasons</button>
+    </div>
+ 
+    <div class="gallery-grid reveal" id="galleryGrid">
+ 
+      <div class="gallery-item" data-cat="waterfall"
+           data-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85"
+           data-cap="Cedar Falls — The Crown Jewel">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=75" alt="Cedar Falls">
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__caption">
+            <strong>Cedar Falls</strong>Arkansas' most photographed waterfall
+          </div>
+        </div>
+      </div>
+ 
+      <div class="gallery-item" data-cat="scenic"
+           data-src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1200&q=85"
+           data-cap="Valley Overlook at Dawn">
+        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=75" alt="Valley Overlook">
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__caption">
+            <strong>Valley Overlook</strong>Arkansas River Valley from the bluffs
+          </div>
+        </div>
+      </div>
+ 
+      <div class="gallery-item" data-cat="wildlife"
+           data-src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=85"
+           data-cap="White-tailed Deer at Dusk">
+        <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=75" alt="White-tailed deer">
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__caption">
+            <strong>White-tailed Deer</strong>Common in the park at dawn and dusk
+          </div>
+        </div>
+      </div>
+ 
+      <div class="gallery-item" data-cat="trails"
+           data-src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=85"
+           data-cap="Forest Trail Through the Cedars">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=75" alt="Forest Trail">
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__caption">
+            <strong>Cedar Forest Trail</strong>20+ miles of marked trails
+          </div>
+        </div>
+      </div>
+ 
+      <div class="gallery-item" data-cat="seasons"
+           data-src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1200&q=85"
+           data-cap="Fall Foliage on Petit Jean Mountain">
+        <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=600&q=75" alt="Fall Foliage">
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__caption">
+            <strong>Fall Color</strong>Peak foliage mid-to-late October
+          </div>
+        </div>
+      </div>
+ 
+      <div class="gallery-item" data-cat="scenic"
+           data-src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=85"
+           data-cap="Bluff Overlook at Sunrise">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=75" alt="Bluff Overlook">
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__caption">
+            <strong>East Bluff Overlook</strong>Best sunrise spot in the park
+          </div>
+        </div>
+      </div>
+ 
+      <div class="gallery-item" data-cat="waterfall"
+           data-src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200&q=85"
+           data-cap="Cedar Falls — Winter Ice">
+        <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&q=75" alt="Winter waterfall">
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__caption">
+            <strong>Winter Cedar Falls</strong>The falls can freeze in January
+          </div>
+        </div>
+      </div>
+ 
+      <div class="gallery-item" data-cat="wildlife"
+           data-src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=1200&q=85"
+           data-cap="Bald Eagle Over Lake Bailey">
+        <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=600&q=75" alt="Bald Eagle">
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__caption">
+            <strong>Bald Eagle</strong>Winter visitors to Lake Bailey
+          </div>
+        </div>
+      </div>
+ 
+      <div class="gallery-item" data-cat="seasons"
+           data-src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=1200&q=85"
+           data-cap="Spring Wildflowers on the Mountain">
+        <img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=600&q=75" alt="Spring Wildflowers">
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__caption">
+            <strong>Spring Bloom</strong>Wildflowers carpet the forest floor in April
+          </div>
+        </div>
+      </div>
+ 
+      <div class="gallery-item" data-cat="scenic"
+           data-src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=1200&q=85"
+           data-cap="Native American Rock Art Bluffs">
+        <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&q=75" alt="Rock Art Bluffs">
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__caption">
+            <strong>Ancient Rock Art</strong>2,000-year-old petroglyphs
+          </div>
+        </div>
+      </div>
+ 
+      <div class="gallery-item" data-cat="scenic"
+           data-src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=85"
+           data-cap="Storm Approaching the Mountain">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=75" alt="Storm Clouds">
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__caption">
+            <strong>Storm Season</strong>Dramatic skies above the Arkansas ridge
+          </div>
+        </div>
+      </div>
+ 
+      <div class="gallery-item" data-cat="trails"
+           data-src="https://images.unsplash.com/photo-1547489432-cf93fa6c71ee?w=1200&q=85"
+           data-cap="Hiking the Canyon Trail">
+        <img src="https://images.unsplash.com/photo-1547489432-cf93fa6c71ee?w=600&q=75" alt="Canyon Trail">
+        <div class="gallery-item__overlay">
+          <div class="gallery-item__caption">
+            <strong>Canyon Trail</strong>The park's most strenuous route
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </main>
+ 
+  <!-- ══ LIGHTBOX ═══════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close lightbox">✕</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    <div class="lightbox__caption" id="lightboxCap"></div>
+  </div>
+ 
+  <!-- ══ FOOTER ═════════════════════════════════ -->
+  <footer class="site-footer">
+    <p>© 2025 Petit Jean State Park ·
+      <a href="https://www.arkansasstateparks.com/parks/petit-jean-state-park" target="_blank">Arkansas State Parks</a>
+    </p>
+  </footer>
+ 
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery.js"></script>
+ 
+</body>
+</html>

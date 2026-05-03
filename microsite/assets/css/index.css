@@ -1,0 +1,266 @@
+body { padding: 0; }
+ 
+/* ── Hero Header ──────────────────────────────── */
+.home-header {
+  position: relative;
+  height: 100vh;
+  min-height: 520px;
+  max-height: 780px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.home-header__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1542401886-65d6c61db217?w=1600&q=80');
+  background-size: cover;
+  background-position: center 40%;
+  filter: brightness(0.45);
+  transform: scale(1.05);
+  animation: slowZoom 14s ease forwards;
+}
+@keyframes slowZoom { to { transform: scale(1); } }
+ 
+.home-header__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(11,28,21,0.2) 0%,
+    rgba(11,28,21,0.0) 40%,
+    rgba(11,28,21,0.85) 100%
+  );
+}
+.home-header__nav-wrap { position: relative; z-index: 10; }
+.home-header__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+  padding: 0 2.5rem 3.5rem;
+}
+.home-header__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s ease forwards;
+}
+.home-header__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: var(--text-head);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.6s ease forwards;
+}
+.home-header__title em { color: var(--accent-warm); font-style: italic; }
+.home-header__sub {
+  font-size: 1rem;
+  color: var(--accent-mist);
+  max-width: 500px;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.85s ease forwards;
+}
+.home-header__scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  animation: fadeIn 1s 1.5s ease forwards;
+}
+.home-header__scroll span {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.scroll-line {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollPulse 1.8s ease infinite;
+}
+ 
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.7); }
+  50%       { opacity: 1;   transform: scaleY(1); }
+}
+ 
+/* ── Bento Section ────────────────────────────── */
+.bento-section {
+  padding: 3rem 2rem 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.bento-intro { margin-bottom: 2rem; }
+ 
+/* ── Bento Grid ───────────────────────────────── */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 240px 190px 190px 220px;
+  gap: 1rem;
+}
+ 
+/* ── Cell Placement ───────────────────────────── */
+.cell--1 { grid-column: 1 / 2; grid-row: 1 / 3; }
+.cell--2 { grid-column: 2 / 3; grid-row: 1 / 2; }
+.cell--3 { grid-column: 3 / 5; grid-row: 1 / 2; }
+.cell--4 { grid-column: 2 / 4; grid-row: 2 / 4; }
+.cell--5 { grid-column: 4 / 5; grid-row: 2 / 4; }
+.cell--6 { grid-column: 1 / 2; grid-row: 3 / 4; }
+.cell--7 { grid-column: 1 / 3; grid-row: 4 / 5; }
+.cell--8 { grid-column: 3 / 4; grid-row: 4 / 5; }
+.cell--9 { grid-column: 4 / 5; grid-row: 4 / 5; }
+ 
+/* ── Cell Base ────────────────────────────────── */
+.cell {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(45,102,69,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.4rem 1.25rem 1.2rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.cell:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 16px 42px rgba(0,0,0,0.55);
+  border-color: rgba(126,203,160,0.4);
+}
+.cell:hover .cell__bg {
+  transform: scale(1.08);
+  filter: brightness(0.5);
+}
+ 
+.cell__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease, filter 0.4s ease;
+  filter: brightness(0.42);
+}
+.cell__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11,28,21,0.88) 0%, transparent 65%);
+}
+.cell__content { position: relative; z-index: 2; }
+ 
+.cell__tag {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: rgba(126,203,160,0.15);
+  color: var(--accent);
+  border: 1px solid rgba(126,203,160,0.3);
+  border-radius: 100px;
+  padding: 0.18rem 0.55rem;
+  margin-bottom: 0.5rem;
+}
+.cell__tag--youtube {
+  background: rgba(255,70,70,0.12);
+  color: #FF6B6B;
+  border-color: rgba(255,70,70,0.3);
+}
+.cell__tag--instagram {
+  background: rgba(195,94,216,0.12);
+  color: #C35ED8;
+  border-color: rgba(195,94,216,0.3);
+}
+ 
+.cell__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-head);
+  line-height: 1.2;
+  margin-bottom: 0.3rem;
+}
+.cell--feature .cell__title { font-size: 1.5rem; }
+ 
+.cell__desc {
+  font-size: 0.8rem;
+  color: var(--accent-mist);
+  line-height: 1.45;
+}
+.cell__arrow {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  z-index: 2;
+  width: 28px; height: 28px;
+  border: 1px solid rgba(126,203,160,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 0.75rem;
+  opacity: 0;
+  transform: translate(4px, -4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.cell:hover .cell__arrow { opacity: 1; transform: translate(0,0); }
+ 
+/* ── Cell Background Images ───────────────────── */
+.cell--1 .cell__bg { background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=75'); }
+.cell--2 .cell__bg { background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=75'); }
+.cell--3 .cell__bg { background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=75'); }
+.cell--4 .cell__bg { background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1000&q=75'); }
+.cell--5 .cell__bg { background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=75'); }
+.cell--6 .cell__bg { background-image: url('https://images.unsplash.com/photo-1478827536114-da961b7f86d2?w=800&q=75'); }
+.cell--7 .cell__bg { background-image: url('https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1000&q=75'); }
+.cell--8 .cell__bg { background-image: url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&q=75'); }
+.cell--9 .cell__bg { background-image: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=75'); }
+ 
+/* ── Responsive Bento ─────────────────────────── */
+@media (max-width: 900px) {
+  .bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 200px 200px 200px 200px 200px 200px;
+  }
+  .cell--1 { grid-column: 1 / 2; grid-row: 1 / 2; }
+  .cell--2 { grid-column: 2 / 3; grid-row: 1 / 2; }
+  .cell--3 { grid-column: 1 / 3; grid-row: 2 / 3; }
+  .cell--4 { grid-column: 1 / 3; grid-row: 3 / 4; }
+  .cell--5 { grid-column: 1 / 2; grid-row: 4 / 5; }
+  .cell--6 { grid-column: 2 / 3; grid-row: 4 / 5; }
+  .cell--7 { grid-column: 1 / 3; grid-row: 5 / 6; }
+  .cell--8 { grid-column: 1 / 2; grid-row: 6 / 7; }
+  .cell--9 { grid-column: 2 / 3; grid-row: 6 / 7; }
+}
+@media (max-width: 520px) {
+  .bento { grid-template-columns: 1fr; }
+  .cell { grid-column: 1 / 2 !important; grid-row: auto !important; min-height: 180px; }
+  .bento-section { padding: 2rem 1rem 4rem; }
+  .home-header__content { padding: 0 1.5rem 2.5rem; }
+}

@@ -1,0 +1,230 @@
+Trails · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trail Maps &amp; Hiking — Petit Jean State Park</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/trails.css">
+</head>
+<body>
+ 
+  <!-- ══ HEADER ════════════════════════════════ -->
+  <header class="site-header">
+    <a href="index.html" class="site-header__logo">
+      <img src="assets/img/nps-logo.png" alt="National Park Service Logo">
+      <div class="site-header__title">
+        <span class="name">Petit Jean State Park</span>
+        <span class="sub">Arkansas' First State Park</span>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="history.html">History</a>
+      <a href="things-to-do.html">Things To Do</a>
+      <a href="trails.html">Trails</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="visitor-info.html">Visitor Info</a>
+      <a href="weather.html">Weather</a>
+    </nav>
+  </header>
+ 
+  <!-- ══ HERO ══════════════════════════════════ -->
+  <div class="page-hero">
+    <div class="page-hero__bg trails-hero__bg"></div>
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <span class="page-hero__eyebrow">20+ Miles of Marked Trails</span>
+      <h1 class="page-hero__title">Trail Maps<br>&amp; Hiking</h1>
+    </div>
+  </div>
+ 
+  <!-- ══ CONTENT ═══════════════════════════════ -->
+  <main class="page-content">
+ 
+    <div class="reveal">
+      <span class="section-label">Overview</span>
+      <h2 class="section-title">Find Your Trail</h2>
+      <p class="section-body">
+        Petit Jean State Park offers trails for every experience level — from easy lakeside
+        strolls to strenuous canyon descents. All trails are marked and maintained year-round.
+      </p>
+    </div>
+ 
+    <div class="legend reveal">
+      <div class="legend-item"><span class="diff diff--easy">Easy</span> Mostly flat, under 2 miles</div>
+      <div class="legend-item"><span class="diff diff--moderate">Moderate</span> Some elevation, 2–5 miles</div>
+      <div class="legend-item"><span class="diff diff--hard">Strenuous</span> Steep terrain, 5+ miles</div>
+    </div>
+ 
+    <hr class="divider">
+ 
+    <div class="reveal">
+      <span class="section-label">All Trails</span>
+      <h2 class="section-title">Trail Directory</h2>
+    </div>
+ 
+    <div class="trail-list">
+ 
+      <div class="trail-item reveal">
+        <div class="trail-item__body">
+          <span class="diff diff--easy">Easy</span>
+          <h3 class="trail-item__name">Cedar Falls Trail</h3>
+          <p class="trail-item__desc">
+            The park's most iconic hike descends into a cedar canyon to reach the
+            95-foot waterfall — Arkansas' most photographed. The trail out and back
+            passes massive boulders and stunning cliff walls.
+          </p>
+          <div class="trail-item__meta">
+            <div class="trail-meta"><strong>Elevation Gain</strong>280 ft</div>
+            <div class="trail-meta"><strong>Type</strong>Out &amp; Back</div>
+            <div class="trail-meta"><strong>Est. Time</strong>1–2 hrs</div>
+            <div class="trail-meta"><strong>Trailhead</strong>Cedar Falls Parking</div>
+          </div>
+        </div>
+        <div class="trail-item__miles">
+          <span class="trail-miles-num">1.5</span>
+          <span class="trail-miles-unit">Miles</span>
+        </div>
+      </div>
+ 
+      <div class="trail-item reveal">
+        <div class="trail-item__body">
+          <span class="diff diff--moderate">Moderate</span>
+          <h3 class="trail-item__name">Seven Hollows Trail</h3>
+          <p class="trail-item__desc">
+            Winds through a series of forested hollows with rock shelters, a natural bridge,
+            and a cedar glade. One of the park's most diverse and scenic hikes.
+          </p>
+          <div class="trail-item__meta">
+            <div class="trail-meta"><strong>Elevation Gain</strong>420 ft</div>
+            <div class="trail-meta"><strong>Type</strong>Loop</div>
+            <div class="trail-meta"><strong>Est. Time</strong>3–4 hrs</div>
+            <div class="trail-meta"><strong>Trailhead</strong>Seven Hollows Parking</div>
+          </div>
+        </div>
+        <div class="trail-item__miles">
+          <span class="trail-miles-num">4.0</span>
+          <span class="trail-miles-unit">Miles</span>
+        </div>
+      </div>
+ 
+      <div class="trail-item reveal">
+        <div class="trail-item__body">
+          <span class="diff diff--easy">Easy</span>
+          <h3 class="trail-item__name">Lake Bailey Loop</h3>
+          <p class="trail-item__desc">
+            A gentle loop around the park's main lake. Perfect for families with young children.
+            Passes fishing piers, picnic areas, and the swimming beach.
+          </p>
+          <div class="trail-item__meta">
+            <div class="trail-meta"><strong>Elevation Gain</strong>60 ft</div>
+            <div class="trail-meta"><strong>Type</strong>Loop</div>
+            <div class="trail-meta"><strong>Est. Time</strong>45 min–1 hr</div>
+            <div class="trail-meta"><strong>Trailhead</strong>Lake Bailey Swim Area</div>
+          </div>
+        </div>
+        <div class="trail-item__miles">
+          <span class="trail-miles-num">2.0</span>
+          <span class="trail-miles-unit">Miles</span>
+        </div>
+      </div>
+ 
+      <div class="trail-item reveal">
+        <div class="trail-item__body">
+          <span class="diff diff--moderate">Moderate</span>
+          <h3 class="trail-item__name">Petit Jean's Grave &amp; Overlook</h3>
+          <p class="trail-item__desc">
+            A short but meaningful trail leading to the grave of Petit Jean herself,
+            with a sweeping overlook of the Arkansas River Valley. Best at sunrise or sunset.
+          </p>
+          <div class="trail-item__meta">
+            <div class="trail-meta"><strong>Elevation Gain</strong>180 ft</div>
+            <div class="trail-meta"><strong>Type</strong>Out &amp; Back</div>
+            <div class="trail-meta"><strong>Est. Time</strong>45 min</div>
+            <div class="trail-meta"><strong>Trailhead</strong>Mather Lodge</div>
+          </div>
+        </div>
+        <div class="trail-item__miles">
+          <span class="trail-miles-num">1.0</span>
+          <span class="trail-miles-unit">Miles</span>
+        </div>
+      </div>
+ 
+      <div class="trail-item reveal">
+        <div class="trail-item__body">
+          <span class="diff diff--hard">Strenuous</span>
+          <h3 class="trail-item__name">Canyon Trail</h3>
+          <p class="trail-item__desc">
+            The park's most demanding trail drops deep into Bear Creek Canyon.
+            Rocky switchbacks, stream crossings, and sheer bluff walls reward those
+            who make the effort. Solid footwear required.
+          </p>
+          <div class="trail-item__meta">
+            <div class="trail-meta"><strong>Elevation Gain</strong>780 ft</div>
+            <div class="trail-meta"><strong>Type</strong>Out &amp; Back</div>
+            <div class="trail-meta"><strong>Est. Time</strong>4–5 hrs</div>
+            <div class="trail-meta"><strong>Trailhead</strong>Canyon Trailhead Lot</div>
+          </div>
+        </div>
+        <div class="trail-item__miles">
+          <span class="trail-miles-num">6.5</span>
+          <span class="trail-miles-unit">Miles</span>
+        </div>
+      </div>
+ 
+      <div class="trail-item reveal">
+        <div class="trail-item__body">
+          <span class="diff diff--easy">Easy</span>
+          <h3 class="trail-item__name">Rock Art Trail</h3>
+          <p class="trail-item__desc">
+            A short interpretive trail along sandstone bluffs housing thousands of prehistoric
+            petroglyphs. Informational panels explain the symbols left by Native Americans
+            over 2,000 years ago.
+          </p>
+          <div class="trail-item__meta">
+            <div class="trail-meta"><strong>Elevation Gain</strong>40 ft</div>
+            <div class="trail-meta"><strong>Type</strong>Loop</div>
+            <div class="trail-meta"><strong>Est. Time</strong>30–45 min</div>
+            <div class="trail-meta"><strong>Trailhead</strong>Rock Art Pullout</div>
+          </div>
+        </div>
+        <div class="trail-item__miles">
+          <span class="trail-miles-num">0.6</span>
+          <span class="trail-miles-unit">Miles</span>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <div class="tips-box reveal">
+      <h3>Before You Hike</h3>
+      <ul class="tips-list">
+        <li>Bring at least 1 liter of water per person per hour of hiking in warm weather.</li>
+        <li>Trails can be slippery after rain — waterproof boots are recommended on Canyon Trail.</li>
+        <li>Cell service is limited on the mountain. Download offline maps before you go.</li>
+        <li>All pets must be on a leash 6 feet or shorter at all times on all trails.</li>
+        <li>Check the <a href="weather.html">weather forecast</a> before setting out — afternoon thunderstorms are common in summer.</li>
+        <li>Leave No Trace: pack out all trash. Collecting rocks, plants, or artifacts is prohibited.</li>
+      </ul>
+    </div>
+ 
+  </main>
+ 
+  <!-- ══ FOOTER ═════════════════════════════════ -->
+  <footer class="site-footer">
+    <p>© 2025 Petit Jean State Park ·
+      <a href="https://www.arkansasstateparks.com/parks/petit-jean-state-park" target="_blank">Arkansas State Parks</a>
+    </p>
+  </footer>
+ 
+  <script src="assets/js/main.js"></script>
+ 
+</body>
+</html>
