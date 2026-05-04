@@ -1,34 +1,59 @@
-Index · HTML
-Copy
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Petit Jean State Park — Arkansas' First State Park</title>
+  <meta name="description" content="Explore Petit Jean State Park — Arkansas' first state park, featuring Cedar Falls, ancient rock art, hiking trails, and 2,400 acres of natural wonder.">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
  
-  <!-- ══ HERO HEADER ════════════════════════════ -->
-  <header class="home-header">
+  <!--
+    PAGE STRUCTURE
+    ══════════════
+    <body>
+      <header.site-hero>                 Full-viewport hero + nav
+        <div.site-hero__nav-wrap>
+          <div.site-header.site-header--hero>  Transparent nav variant
+            <a.site-header__logo>        Clickable NPS mark — home link
+            <hgroup>                     Park name + tagline
+            <button.nav-toggle>          Mobile hamburger
+            <nav#primary-nav>            Primary navigation
+        <div.site-hero__bg>              Decorative background image
+        <div.site-hero__overlay>         Gradient overlay
+        <hgroup>                         Hero headline copy
+        <div.scroll-cue>                 Animated scroll indicator
+      <main#main-content>
+        <section.bento-section>
+          <h2>
+          <ul.bento-grid>                Grid of <li> > <a.bento-cell>
+      <footer.site-footer>
+  -->
  
-    <div class="home-header__nav-wrap">
-      <div class="site-header" style="background:rgba(11,28,21,0.5);border-bottom-color:rgba(45,102,69,0.2);">
-        <a href="index.html" class="site-header__logo">
-          <img src="assets/img/nps-logo.png" alt="National Park Service Logo">
-          <div class="site-header__title">
-            <span class="name">Petit Jean State Park</span>
-            <span class="sub">Arkansas' First State Park</span>
-          </div>
+  <!-- ══ HERO + NAV ════════════════════════════ -->
+  <header class="site-hero" role="banner">
+ 
+    <div class="site-hero__nav-wrap">
+      <div class="site-header site-header--hero">
+ 
+        <a href="index.html" class="site-header__logo" aria-label="Petit Jean State Park — home">
+          <img src="assets/img/logo.png" alt="National Park Service arrowhead logo" width="46" height="auto">
+          <hgroup>
+            <h1>Petit Jean State Park</h1>
+            <p>Arkansas' First State Park</p>
+          </hgroup>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span><span></span><span></span>
+ 
+        <button class="nav-toggle"
+                aria-controls="primary-nav"
+                aria-expanded="false"
+                aria-label="Toggle navigation menu">
         </button>
-        <nav class="site-nav">
-          <a href="index.html">Home</a>
+ 
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+          <a href="index.html" aria-current="page">Home</a>
           <a href="history.html">History</a>
           <a href="things-to-do.html">Things To Do</a>
           <a href="trails.html">Trails</a>
@@ -36,159 +61,195 @@ Copy
           <a href="visitor-info.html">Visitor Info</a>
           <a href="weather.html">Weather</a>
         </nav>
+ 
       </div>
     </div>
  
-    <div class="home-header__bg"></div>
-    <div class="home-header__overlay"></div>
+    <div class="site-hero__bg" aria-hidden="true"></div>
+    <div class="site-hero__overlay" aria-hidden="true"></div>
  
-    <div class="home-header__content">
-      <p class="home-header__eyebrow">Arkansas' First State Park · Est. 1923</p>
-      <h1 class="home-header__title">
+    <hgroup>
+      <p class="eyebrow">Arkansas' First State Park · Est. 1923</p>
+      <h1>
         Where the<br>
         <em>Mountain Meets</em><br>
         the Sky
       </h1>
-      <p class="home-header__sub">
+      <p class="tagline">
         Explore cedar canyons, ancient bluffs, and 2,400 acres of untouched
         natural wonder atop Petit Jean Mountain.
       </p>
-    </div>
+    </hgroup>
  
-    <div class="home-header__scroll">
+    <div class="scroll-cue" aria-hidden="true">
       <span>Explore</span>
-      <div class="scroll-line"></div>
+      <div class="scroll-cue__line"></div>
     </div>
  
   </header>
  
-  <!-- ══ BENTO GRID ═════════════════════════════ -->
-  <main>
-    <section class="bento-section">
+  <!-- ══ MAIN CONTENT ═══════════════════════════ -->
+  <main id="main-content">
+ 
+    <section class="bento-section" aria-labelledby="bento-heading">
  
       <div class="bento-intro reveal">
-        <span class="section-label">Discover the Park</span>
-        <h2 class="section-title">Everything Petit Jean</h2>
+        <p class="label" aria-hidden="true">Discover the Park</p>
+        <h2 id="bento-heading" class="section-title">Everything Petit Jean</h2>
       </div>
  
-      <div class="bento">
+      <!--
+        Bento grid: an unordered list of navigation destinations.
+        Each <li> contains an <a> that fills the cell completely.
+        All decorative image/overlay divs carry aria-hidden="true".
+      -->
+      <ul class="bento-grid" role="list">
  
         <!-- 1: History -->
-        <a href="history.html" class="cell cell--1 reveal">
-          <div class="cell__bg"></div>
-          <div class="cell__overlay"></div>
-          <div class="cell__arrow">↗</div>
-          <div class="cell__content">
-            <span class="cell__tag">Legend</span>
-            <h2 class="cell__title">The Legend of Petit Jean</h2>
-            <p class="cell__desc">A young woman who crossed an ocean for love — and left her name on a mountain.</p>
-          </div>
-        </a>
+        <li>
+          <a href="history.html" class="bento-cell">
+            <div class="bento-cell__bg" aria-hidden="true"></div>
+            <div class="bento-cell__overlay" aria-hidden="true"></div>
+            <span class="bento-cell__arrow" aria-hidden="true">↗</span>
+            <div class="bento-cell__body">
+              <h3>The Legend of Petit Jean</h3>
+              <p class="desc">A young woman who crossed an ocean for love — and left her name on a mountain.</p>
+            </div>
+          </a>
+        </li>
  
         <!-- 2: Weather -->
-        <a href="weather.html" class="cell cell--2 reveal">
-          <div class="cell__bg"></div>
-          <div class="cell__overlay"></div>
-          <div class="cell__arrow">↗</div>
-          <div class="cell__content">
-            <span class="cell__tag">Live</span>
-            <h2 class="cell__title">Mountain Weather</h2>
-            <p class="cell__desc">Current conditions on the mountain.</p>
-          </div>
-        </a>
+        <li>
+          <a href="weather.html" class="bento-cell">
+            <div class="bento-cell__bg" aria-hidden="true"></div>
+            <div class="bento-cell__overlay" aria-hidden="true"></div>
+            <span class="bento-cell__arrow" aria-hidden="true">↗</span>
+            <div class="bento-cell__body">
+              <p class="tag">Live</p>
+              <h3>Mountain Weather</h3>
+              <p class="desc">Current conditions on the mountain.</p>
+            </div>
+          </a>
+        </li>
  
-        <!-- 3: Things To Do (wide feature) -->
-        <a href="things-to-do.html" class="cell cell--3 cell--feature reveal">
-          <div class="cell__bg"></div>
-          <div class="cell__overlay"></div>
-          <div class="cell__arrow">↗</div>
-          <div class="cell__content">
-            <span class="cell__tag">Activities</span>
-            <h2 class="cell__title">Things To Do</h2>
-            <p class="cell__desc">Hiking, fishing, swimming, camping &amp; more across 2,400 acres.</p>
-          </div>
-        </a>
+        <!-- 3: Things To Do — wide feature cell -->
+        <li>
+          <a href="things-to-do.html" class="bento-cell bento-cell--feature">
+            <div class="bento-cell__bg" aria-hidden="true"></div>
+            <div class="bento-cell__overlay" aria-hidden="true"></div>
+            <span class="bento-cell__arrow" aria-hidden="true">↗</span>
+            <div class="bento-cell__body">
+              <p class="tag">Activities</p>
+              <h3>Things To Do</h3>
+              <p class="desc">Hiking, fishing, swimming, camping &amp; more across 2,400 acres.</p>
+            </div>
+          </a>
+        </li>
  
-        <!-- 4: Gallery (big center) -->
-        <a href="gallery.html" class="cell cell--4 cell--feature reveal">
-          <div class="cell__bg"></div>
-          <div class="cell__overlay"></div>
-          <div class="cell__arrow">↗</div>
-          <div class="cell__content">
-            <span class="cell__tag">Gallery</span>
-            <h2 class="cell__title">Photo Gallery</h2>
-            <p class="cell__desc">Cedar Falls, canyons, wildflowers, and the mountain at every season.</p>
-          </div>
-        </a>
+        <!-- 4: Gallery — large centre cell -->
+        <li>
+          <a href="gallery.html" class="bento-cell bento-cell--feature">
+            <div class="bento-cell__bg" aria-hidden="true"></div>
+            <div class="bento-cell__overlay" aria-hidden="true"></div>
+            <span class="bento-cell__arrow" aria-hidden="true">↗</span>
+            <div class="bento-cell__body">
+              <p class="tag">Gallery</p>
+              <h3>Photo Gallery</h3>
+              <p class="desc">Cedar Falls, canyons, wildflowers, and the mountain at every season.</p>
+            </div>
+          </a>
+        </li>
  
         <!-- 5: Trails -->
-        <a href="trails.html" class="cell cell--5 reveal">
-          <div class="cell__bg"></div>
-          <div class="cell__overlay"></div>
-          <div class="cell__arrow">↗</div>
-          <div class="cell__content">
-            <span class="cell__tag">Hiking</span>
-            <h2 class="cell__title">Trail Maps</h2>
-            <p class="cell__desc">20+ miles of marked trails for every skill level.</p>
-          </div>
-        </a>
+        <li>
+          <a href="trails.html" class="bento-cell">
+            <div class="bento-cell__bg" aria-hidden="true"></div>
+            <div class="bento-cell__overlay" aria-hidden="true"></div>
+            <span class="bento-cell__arrow" aria-hidden="true">↗</span>
+            <div class="bento-cell__body">
+              <p class="tag">Hiking</p>
+              <h3>Trail Maps</h3>
+              <p class="desc">20+ miles of marked trails for every skill level.</p>
+            </div>
+          </a>
+        </li>
  
         <!-- 6: Visitor Info -->
-        <a href="visitor-info.html" class="cell cell--6 reveal">
-          <div class="cell__bg"></div>
-          <div class="cell__overlay"></div>
-          <div class="cell__arrow">↗</div>
-          <div class="cell__content">
-            <span class="cell__tag">Info</span>
-            <h2 class="cell__title">Visitor Info &amp; FAQ</h2>
-            <p class="cell__desc">Hours, fees, and everything you need.</p>
-          </div>
-        </a>
+        <li>
+          <a href="visitor-info.html" class="bento-cell">
+            <div class="bento-cell__bg" aria-hidden="true"></div>
+            <div class="bento-cell__overlay" aria-hidden="true"></div>
+            <span class="bento-cell__arrow" aria-hidden="true">↗</span>
+            <div class="bento-cell__body">
+              <p class="tag">Info</p>
+              <h3>Visitor Info &amp; FAQ</h3>
+              <p class="desc">Hours, fees, and everything you need.</p>
+            </div>
+          </a>
+        </li>
  
-        <!-- 7: YouTube (wide) -->
-        <a href="https://www.youtube.com/@PetitJeanStatePark" target="_blank" rel="noopener" class="cell cell--7 reveal">
-          <div class="cell__bg"></div>
-          <div class="cell__overlay"></div>
-          <div class="cell__arrow">↗</div>
-          <div class="cell__content">
-            <span class="cell__tag cell__tag--youtube">▶ YouTube</span>
-            <h2 class="cell__title">Watch the Park Come Alive</h2>
-            <p class="cell__desc">Trail guides, park stories, and seasonal features.</p>
-          </div>
-        </a>
+        <!-- 7: YouTube — external, wide cell -->
+        <li>
+          <a href="https://www.youtube.com/@PetitJeanStatePark"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="bento-cell"
+             aria-label="Petit Jean State Park on YouTube (opens in new tab)">
+            <div class="bento-cell__bg" aria-hidden="true"></div>
+            <div class="bento-cell__overlay" aria-hidden="true"></div>
+            <span class="bento-cell__arrow" aria-hidden="true">↗</span>
+            <div class="bento-cell__body">
+              <p class="tag tag--youtube">▶ YouTube</p>
+              <h3>Watch the Park Come Alive</h3>
+              <p class="desc">Trail guides, park stories, and seasonal features.</p>
+            </div>
+          </a>
+        </li>
  
-        <!-- 8: Instagram -->
-        <a href="https://www.instagram.com/petitjeanstatepark/" target="_blank" rel="noopener" class="cell cell--8 reveal">
-          <div class="cell__bg"></div>
-          <div class="cell__overlay"></div>
-          <div class="cell__arrow">↗</div>
-          <div class="cell__content">
-            <span class="cell__tag cell__tag--instagram">✦ Instagram</span>
-            <h2 class="cell__title">Follow Us</h2>
-            <p class="cell__desc">Daily shots from the mountain.</p>
-          </div>
-        </a>
+        <!-- 8: Instagram — external -->
+        <li>
+          <a href="https://www.instagram.com/petitjeanstatepark/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="bento-cell"
+             aria-label="Petit Jean State Park on Instagram (opens in new tab)">
+            <div class="bento-cell__bg" aria-hidden="true"></div>
+            <div class="bento-cell__overlay" aria-hidden="true"></div>
+            <span class="bento-cell__arrow" aria-hidden="true">↗</span>
+            <div class="bento-cell__body">
+              <p class="tag tag--instagram">✦ Instagram</p>
+              <h3>Follow Us</h3>
+              <p class="desc">Daily shots from the mountain.</p>
+            </div>
+          </a>
+        </li>
  
         <!-- 9: Wildlife -->
-        <a href="things-to-do.html" class="cell cell--9 reveal">
-          <div class="cell__bg"></div>
-          <div class="cell__overlay"></div>
-          <div class="cell__arrow">↗</div>
-          <div class="cell__content">
-            <span class="cell__tag">Wildlife</span>
-            <h2 class="cell__title">Wildlife Spotting</h2>
-            <p class="cell__desc">Deer, eagles, and more.</p>
-          </div>
-        </a>
+        <li>
+          <a href="things-to-do.html" class="bento-cell">
+            <div class="bento-cell__bg" aria-hidden="true"></div>
+            <div class="bento-cell__overlay" aria-hidden="true"></div>
+            <span class="bento-cell__arrow" aria-hidden="true">↗</span>
+            <div class="bento-cell__body">
+              <p class="tag">Wildlife</p>
+              <h3>Wildlife Spotting</h3>
+              <p class="desc">Deer, eagles, and more await.</p>
+            </div>
+          </a>
+        </li>
  
-      </div>
+      </ul>
     </section>
+ 
   </main>
  
   <!-- ══ FOOTER ═════════════════════════════════ -->
   <footer class="site-footer">
-    <p>© 2025 Petit Jean State Park ·
-      <a href="https://www.arkansasstateparks.com/parks/petit-jean-state-park" target="_blank">Arkansas State Parks</a>
+    <p>
+      © 2025 Petit Jean State Park ·
+      <a href="https://www.arkansasstateparks.com/parks/petit-jean-state-park"
+         target="_blank"
+         rel="noopener noreferrer">Arkansas State Parks</a>
     </p>
   </footer>
  

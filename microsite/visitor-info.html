@@ -4,24 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visitor Info &amp; FAQ — Petit Jean State Park</title>
+  <meta name="description" content="Plan your visit to Petit Jean State Park. Hours, fees, camping rates, FAQ, and contact information for Arkansas' first state park.">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/visitor-info.css">
 </head>
 <body>
  
-  <!-- ══ HEADER ════════════════════════════════ -->
-  <header class="site-header">
-    <a href="index.html" class="site-header__logo">
-      <img src="assets/img/nps-logo.png" alt="National Park Service Logo">
-      <div class="site-header__title">
-        <span class="name">Petit Jean State Park</span>
-        <span class="sub">Arkansas' First State Park</span>
-      </div>
+  <!-- ══ SITE HEADER ════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <a href="index.html" class="site-header__logo" aria-label="Petit Jean State Park — home">
+      <img src="assets/img/nps-logo.png" alt="National Park Service arrowhead logo" width="46">
+      <hgroup>
+        <h1>Petit Jean State Park</h1>
+        <p>Arkansas' First State Park</p>
+      </hgroup>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation">
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation menu">
       <span></span><span></span><span></span>
     </button>
-    <nav class="site-nav">
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="history.html">History</a>
       <a href="things-to-do.html">Things To Do</a>
@@ -32,256 +33,269 @@
     </nav>
   </header>
  
-  <!-- ══ HERO ══════════════════════════════════ -->
-  <div class="page-hero">
-    <div class="page-hero__bg info-hero__bg"></div>
-    <div class="page-hero__overlay"></div>
+  <!-- ══ PAGE HERO ══════════════════════════════ -->
+  <div class="page-hero" role="img" aria-label="Picnic area shaded by large oak trees in the park">
+    <div class="page-hero__bg info-hero__bg" aria-hidden="true"></div>
+    <div class="page-hero__overlay" aria-hidden="true"></div>
     <div class="page-hero__content">
-      <span class="page-hero__eyebrow">Plan Your Visit</span>
-      <h1 class="page-hero__title">Visitor Info<br>&amp; FAQ</h1>
+      <p>Plan Your Visit</p>
+      <h1>Visitor Info<br>&amp; FAQ</h1>
     </div>
   </div>
  
-  <!-- ══ CONTENT ═══════════════════════════════ -->
-  <main class="page-content">
+  <!-- ══ MAIN CONTENT ═══════════════════════════ -->
+  <main id="main-content" class="page-content">
  
     <!-- Quick Facts -->
-    <div class="reveal">
-      <span class="section-label">At a Glance</span>
-      <h2 class="section-title">Quick Facts</h2>
-    </div>
- 
-    <div class="info-grid reveal">
-      <div class="info-tile">
-        <div class="info-tile__icon">🕐</div>
-        <div class="info-tile__label">Park Hours</div>
-        <div class="info-tile__value">8:00 AM – 10:00 PM</div>
-        <div class="info-tile__note">Daily, year-round</div>
+    <section aria-labelledby="facts-heading">
+      <div class="reveal">
+        <p class="label" aria-hidden="true">At a Glance</p>
+        <h2 id="facts-heading" class="section-title">Quick Facts</h2>
       </div>
-      <div class="info-tile">
-        <div class="info-tile__icon">📍</div>
-        <div class="info-tile__label">Address</div>
-        <div class="info-tile__value">2 State Park Rd<br>Morrilton, AR 72110</div>
-      </div>
-      <div class="info-tile">
-        <div class="info-tile__icon">📞</div>
-        <div class="info-tile__label">Phone</div>
-        <div class="info-tile__value">(501) 727-5441</div>
-        <div class="info-tile__note">Visitor Center</div>
-      </div>
-      <div class="info-tile">
-        <div class="info-tile__icon">🌡️</div>
-        <div class="info-tile__label">Best Season</div>
-        <div class="info-tile__value">Spring &amp; Fall</div>
-        <div class="info-tile__note">Mild temps, fewer crowds</div>
-      </div>
-      <div class="info-tile">
-        <div class="info-tile__icon">🐾</div>
-        <div class="info-tile__label">Pets</div>
-        <div class="info-tile__value">Welcome on leash</div>
-        <div class="info-tile__note">6 ft max on all trails</div>
-      </div>
-      <div class="info-tile">
-        <div class="info-tile__icon">♿</div>
-        <div class="info-tile__label">Accessibility</div>
-        <div class="info-tile__value">Partial access</div>
-        <div class="info-tile__note">Call ahead for details</div>
-      </div>
-    </div>
  
-    <hr class="divider">
+      <!--
+        <dl> is semantically correct for key/value fact pairs.
+        Each <div> groups a <dt> (term) with its <dd> (description).
+      -->
+      <dl class="facts-grid reveal" aria-label="Key park facts">
  
-    <!-- Fees -->
-    <div class="reveal">
-      <span class="section-label">Fees</span>
-      <h2 class="section-title">Rates &amp; Reservations</h2>
-      <p class="section-body">Day use of the park is free. Fees apply for camping and cabin stays.</p>
-    </div>
- 
-    <div class="fees-wrap reveal">
-      <table class="fees-table">
-        <thead>
-          <tr>
-            <th>Accommodation</th>
-            <th>Type</th>
-            <th>Rate</th>
-            <th>Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Primitive Tent Site</td>
-            <td>Camping</td>
-            <td class="price">$15 / night</td>
-            <td>No hookups, near water spigot</td>
-          </tr>
-          <tr>
-            <td>Electric Hookup Site</td>
-            <td>Camping</td>
-            <td class="price">$22 / night</td>
-            <td>30-amp electric only</td>
-          </tr>
-          <tr>
-            <td>Full Hookup RV Site</td>
-            <td>Camping</td>
-            <td class="price">$28 / night</td>
-            <td>Electric, water &amp; sewer</td>
-          </tr>
-          <tr>
-            <td>Mather Lodge Standard Room</td>
-            <td>Lodge</td>
-            <td class="price">$95–$125 / night</td>
-            <td>Seasonal availability</td>
-          </tr>
-          <tr>
-            <td>CCC Cabin (1–2 person)</td>
-            <td>Cabin</td>
-            <td class="price">$80 / night</td>
-            <td>Historic stone cabins</td>
-          </tr>
-          <tr>
-            <td>CCC Cabin (4–6 person)</td>
-            <td>Cabin</td>
-            <td class="price">$120 / night</td>
-            <td>Sleeps up to 6</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
- 
-    <hr class="divider">
- 
-    <!-- FAQ -->
-    <div class="reveal">
-      <span class="section-label">Common Questions</span>
-      <h2 class="section-title">FAQ</h2>
-    </div>
- 
-    <div class="faq-list reveal" id="faqList">
- 
-      <div class="faq-item">
-        <div class="faq-question">
-          Is there an entrance fee to visit the park?
-          <span class="faq-toggle">+</span>
+        <div>
+          <div class="fact-icon" aria-hidden="true">🕐</div>
+          <dt>Park Hours</dt>
+          <dd>8:00 AM – 10:00 PM <small>Daily, year-round</small></dd>
         </div>
-        <div class="faq-answer">
-          No — day use of Petit Jean State Park is free for all visitors. Fees only apply for
-          overnight stays (camping or lodge/cabin accommodations).
+ 
+        <div>
+          <div class="fact-icon" aria-hidden="true">📍</div>
+          <dt>Address</dt>
+          <dd>2 State Park Rd<br>Morrilton, AR 72110</dd>
         </div>
+ 
+        <div>
+          <div class="fact-icon" aria-hidden="true">📞</div>
+          <dt>Phone</dt>
+          <dd><a href="tel:+15017275441">(501) 727-5441</a> <small>Visitor Center</small></dd>
+        </div>
+ 
+        <div>
+          <div class="fact-icon" aria-hidden="true">🌡️</div>
+          <dt>Best Season</dt>
+          <dd>Spring &amp; Fall <small>Mild temps, fewer crowds</small></dd>
+        </div>
+ 
+        <div>
+          <div class="fact-icon" aria-hidden="true">🐾</div>
+          <dt>Pets</dt>
+          <dd>Welcome on leash <small>6 ft max on all trails</small></dd>
+        </div>
+ 
+        <div>
+          <div class="fact-icon" aria-hidden="true">♿</div>
+          <dt>Accessibility</dt>
+          <dd>Partial access <small>Call ahead for details</small></dd>
+        </div>
+ 
+      </dl>
+    </section>
+ 
+    <hr>
+ 
+    <!-- Fees table -->
+    <section aria-labelledby="fees-heading">
+      <div class="reveal">
+        <p class="label" aria-hidden="true">Fees</p>
+        <h2 id="fees-heading" class="section-title">Rates &amp; Reservations</h2>
+        <p class="section-body">Day use of the park is free. Fees apply for camping and cabin stays.</p>
       </div>
  
-      <div class="faq-item">
-        <div class="faq-question">
-          Can I make camping or cabin reservations online?
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          Yes. Reservations can be made through the Arkansas State Parks reservation system at
-          <a href="https://www.arkansasstateparks.com" target="_blank">arkansasstateparks.com</a>.
-          Summer weekends and fall foliage season book up quickly — reserve at least 2–4 weeks in advance.
-        </div>
+      <div class="fees-wrap reveal">
+        <!--
+          Semantic <table> with <caption>, <thead>, <tbody>.
+          <th scope="col"> explicitly scopes column headers.
+        -->
+        <table class="fees-table">
+          <caption>Overnight accommodation rates at Petit Jean State Park</caption>
+          <thead>
+            <tr>
+              <th scope="col">Accommodation</th>
+              <th scope="col">Type</th>
+              <th scope="col">Rate</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Primitive Tent Site</td>
+              <td>Camping</td>
+              <td class="price">$15 / night</td>
+              <td>No hookups, near water spigot</td>
+            </tr>
+            <tr>
+              <td>Electric Hookup Site</td>
+              <td>Camping</td>
+              <td class="price">$22 / night</td>
+              <td>30-amp electric only</td>
+            </tr>
+            <tr>
+              <td>Full Hookup RV Site</td>
+              <td>Camping</td>
+              <td class="price">$28 / night</td>
+              <td>Electric, water &amp; sewer</td>
+            </tr>
+            <tr>
+              <td>Mather Lodge Standard Room</td>
+              <td>Lodge</td>
+              <td class="price">$95–$125 / night</td>
+              <td>Seasonal availability</td>
+            </tr>
+            <tr>
+              <td>CCC Cabin (1–2 person)</td>
+              <td>Cabin</td>
+              <td class="price">$80 / night</td>
+              <td>Historic stone cabins</td>
+            </tr>
+            <tr>
+              <td>CCC Cabin (4–6 person)</td>
+              <td>Cabin</td>
+              <td class="price">$120 / night</td>
+              <td>Sleeps up to 6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+ 
+    <hr>
+ 
+    <!-- FAQ using native <details>/<summary> -->
+    <section aria-labelledby="faq-heading">
+      <div class="reveal">
+        <p class="label" aria-hidden="true">Common Questions</p>
+        <h2 id="faq-heading" class="section-title">FAQ</h2>
       </div>
  
-      <div class="faq-item">
-        <div class="faq-question">
-          Is the Cedar Falls trail open year-round?
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          The Cedar Falls trail is generally open year-round, weather permitting. In winter,
-          the trail can become icy and dangerous — the park may temporarily close it after freezing
-          precipitation. Always check trail conditions by calling the visitor center before visiting.
-        </div>
+      <!--
+        <details>/<summary> is the native HTML disclosure pattern.
+        No ARIA roles needed — browsers handle expand/collapse natively.
+        JS adds "one-open-at-a-time" enhancement via the toggle event.
+      -->
+      <div class="faq-list reveal">
+ 
+        <details class="faq-item">
+          <summary>Is there an entrance fee to visit the park?</summary>
+          <div class="faq-answer">
+            <p>No — day use of Petit Jean State Park is free for all visitors. Fees only apply for
+            overnight stays (camping or lodge/cabin accommodations).</p>
+          </div>
+        </details>
+ 
+        <details class="faq-item">
+          <summary>Can I make camping or cabin reservations online?</summary>
+          <div class="faq-answer">
+            <p>Yes. Reservations can be made through the Arkansas State Parks reservation system at
+            <a href="https://www.arkansasstateparks.com" target="_blank" rel="noopener noreferrer">arkansasstateparks.com</a>.
+            Summer weekends and fall foliage season book up quickly — reserve at least 2–4 weeks in advance.</p>
+          </div>
+        </details>
+ 
+        <details class="faq-item">
+          <summary>Is the Cedar Falls trail open year-round?</summary>
+          <div class="faq-answer">
+            <p>The Cedar Falls trail is generally open year-round, weather permitting. In winter,
+            the trail can become icy and dangerous — the park may temporarily close it after freezing
+            precipitation. Always check trail conditions by calling the visitor center before visiting.</p>
+          </div>
+        </details>
+ 
+        <details class="faq-item">
+          <summary>Is there cell service on the mountain?</summary>
+          <div class="faq-answer">
+            <p>Cell service is limited and inconsistent throughout much of the park. We strongly recommend
+            downloading offline maps (AllTrails, Google Maps) before arriving. The lodge and visitor
+            center areas typically have better coverage.</p>
+          </div>
+        </details>
+ 
+        <details class="faq-item">
+          <summary>Are campfires allowed?</summary>
+          <div class="faq-answer">
+            <p>Campfires are permitted in designated fire rings at campsites only. During periods of
+            high fire danger, the park may impose temporary fire bans. Firewood is available for
+            purchase at the camp store. Collecting dead wood from the forest is not permitted.</p>
+          </div>
+        </details>
+ 
+        <details class="faq-item">
+          <summary>What's the best time to see Cedar Falls at peak flow?</summary>
+          <div class="faq-answer">
+            <p>Cedar Falls is most dramatic in late winter and spring (February–April) following
+            seasonal rains. In a dry summer, the flow can slow significantly. The falls also
+            partially freeze in January, creating a stunning ice formation. Fall brings reliable
+            flow plus the bonus of fall foliage color.</p>
+          </div>
+        </details>
+ 
+        <details class="faq-item">
+          <summary>Is there a restaurant or food service in the park?</summary>
+          <div class="faq-answer">
+            <p>Mather Lodge offers a full-service restaurant open for breakfast, lunch, and dinner
+            during peak season (spring through fall). Hours are reduced in winter. A camp store
+            near the campground sells basic supplies, firewood, and snacks.</p>
+          </div>
+        </details>
+ 
+      </div>
+    </section>
+ 
+    <hr>
+ 
+    <!-- Contact: semantic <address> element -->
+    <section aria-labelledby="contact-heading">
+      <div class="reveal">
+        <p class="label" aria-hidden="true">Get in Touch</p>
+        <h2 id="contact-heading" class="section-title">Contact the Park</h2>
       </div>
  
-      <div class="faq-item">
-        <div class="faq-question">
-          Is there cell service on the mountain?
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          Cell service is limited and inconsistent throughout much of the park. We strongly recommend
-          downloading offline maps (AllTrails, Google Maps) before arriving. The lodge and visitor
-          center areas typically have better coverage.
-        </div>
-      </div>
+      <!--
+        <address> is the correct element for contact information
+        associated with the nearest <article> or <body>.
+      -->
+      <address class="contact-grid reveal">
  
-      <div class="faq-item">
-        <div class="faq-question">
-          Are campfires allowed?
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          Campfires are permitted in designated fire rings at campsites only. During periods of
-          high fire danger, the park may impose temporary fire bans. Firewood is available for
-          purchase at the camp store. Collecting dead wood from the forest is not permitted.
-        </div>
-      </div>
+        <dl>
+          <dt>Visitor Center</dt>
+          <dd><a href="tel:+15017275441">(501) 727-5441</a></dd>
+        </dl>
  
-      <div class="faq-item">
-        <div class="faq-question">
-          What's the best time of year to see Cedar Falls at peak flow?
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          Cedar Falls is most dramatic in late winter and spring (February–April) following
-          seasonal rains. In a dry summer, the flow can slow significantly. The falls also
-          partially freeze in January, creating a stunning ice formation. Fall brings reliable
-          flow plus the bonus of fall foliage color.
-        </div>
-      </div>
+        <dl>
+          <dt>Mather Lodge</dt>
+          <dd><a href="tel:+15017275431">(501) 727-5431</a></dd>
+        </dl>
  
-      <div class="faq-item">
-        <div class="faq-question">
-          Is there a restaurant or food service in the park?
-          <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-          Mather Lodge offers a full-service restaurant open for breakfast, lunch, and dinner
-          during peak season (spring through fall). Hours are reduced in winter. A camp store
-          near the campground sells basic supplies, firewood, and snacks.
-        </div>
-      </div>
+        <dl>
+          <dt>Website</dt>
+          <dd>
+            <a href="https://www.arkansasstateparks.com/parks/petit-jean-state-park"
+               target="_blank" rel="noopener noreferrer">arkansasstateparks.com</a>
+          </dd>
+        </dl>
  
-    </div>
+        <dl>
+          <dt>Mailing Address</dt>
+          <dd>2 State Park Rd<br>Morrilton, AR 72110</dd>
+        </dl>
  
-    <hr class="divider">
- 
-    <!-- Contact -->
-    <div class="reveal">
-      <span class="section-label">Get in Touch</span>
-      <h2 class="section-title">Contact the Park</h2>
-    </div>
- 
-    <div class="contact-box reveal">
-      <div class="contact-item">
-        <span class="contact-label">Visitor Center Phone</span>
-        <span class="contact-value">(501) 727-5441</span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">Mather Lodge</span>
-        <span class="contact-value">(501) 727-5431</span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">Website</span>
-        <span class="contact-value">
-          <a href="https://www.arkansasstateparks.com/parks/petit-jean-state-park" target="_blank">
-            arkansasstateparks.com
-          </a>
-        </span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">Mailing Address</span>
-        <span class="contact-value">2 State Park Rd, Morrilton, AR 72110</span>
-      </div>
-    </div>
+      </address>
+    </section>
  
   </main>
  
   <!-- ══ FOOTER ═════════════════════════════════ -->
   <footer class="site-footer">
-    <p>© 2025 Petit Jean State Park ·
-      <a href="https://www.arkansasstateparks.com/parks/petit-jean-state-park" target="_blank">Arkansas State Parks</a>
+    <p>
+      © 2025 Petit Jean State Park ·
+      <a href="https://www.arkansasstateparks.com/parks/petit-jean-state-park"
+         target="_blank" rel="noopener noreferrer">Arkansas State Parks</a>
     </p>
   </footer>
  
@@ -290,4 +304,3 @@
  
 </body>
 </html>
- 

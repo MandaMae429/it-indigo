@@ -7,24 +7,25 @@ Copy
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Things To Do — Petit Jean State Park</title>
+  <meta name="description" content="Discover things to do at Petit Jean State Park — hiking, swimming, fishing, camping, photography, and more across 2,400 acres.">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/things-to-do.css">
 </head>
 <body>
  
-  <!-- ══ HEADER ════════════════════════════════ -->
-  <header class="site-header">
-    <a href="index.html" class="site-header__logo">
-      <img src="assets/img/nps-logo.png" alt="National Park Service Logo">
-      <div class="site-header__title">
-        <span class="name">Petit Jean State Park</span>
-        <span class="sub">Arkansas' First State Park</span>
-      </div>
+  <!-- ══ SITE HEADER ════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <a href="index.html" class="site-header__logo" aria-label="Petit Jean State Park — home">
+      <img src="assets/img/nps-logo.png" alt="National Park Service arrowhead logo" width="46">
+      <hgroup>
+        <h1>Petit Jean State Park</h1>
+        <p>Arkansas' First State Park</p>
+      </hgroup>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation">
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation menu">
       <span></span><span></span><span></span>
     </button>
-    <nav class="site-nav">
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="history.html">History</a>
       <a href="things-to-do.html">Things To Do</a>
@@ -35,151 +36,213 @@ Copy
     </nav>
   </header>
  
-  <!-- ══ HERO ══════════════════════════════════ -->
-  <div class="page-hero">
-    <div class="page-hero__bg todo-hero__bg"></div>
-    <div class="page-hero__overlay"></div>
+  <!-- ══ PAGE HERO ══════════════════════════════ -->
+  <div class="page-hero" role="img" aria-label="Sunlight filtering through a cedar forest">
+    <div class="page-hero__bg todo-hero__bg" aria-hidden="true"></div>
+    <div class="page-hero__overlay" aria-hidden="true"></div>
     <div class="page-hero__content">
-      <span class="page-hero__eyebrow">Adventure Awaits</span>
-      <h1 class="page-hero__title">Things To Do</h1>
+      <p>Adventure Awaits</p>
+      <h1>Things To Do</h1>
     </div>
   </div>
  
-  <!-- ══ CONTENT ═══════════════════════════════ -->
-  <main class="page-content">
+  <!-- ══ MAIN CONTENT ═══════════════════════════ -->
+  <main id="main-content" class="page-content">
  
-    <!-- Feature activities -->
-    <div class="reveal">
-      <span class="section-label">Don't Miss</span>
-      <h2 class="section-title">Top Experiences</h2>
-    </div>
- 
-    <div class="feature-row reveal">
-      <div class="feature-card">
-        <div class="feature-card__bg" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=75')"></div>
-        <div class="feature-card__overlay"></div>
-        <div class="feature-card__content">
-          <h3 class="feature-card__title">Cedar Falls</h3>
-          <p class="feature-card__desc">Arkansas' most photographed waterfall — a 95-foot cascade into a boulder-lined pool.</p>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card__bg" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=75')"></div>
-        <div class="feature-card__overlay"></div>
-        <div class="feature-card__content">
-          <h3 class="feature-card__title">Sunrise Overlook</h3>
-          <p class="feature-card__desc">Watch dawn light up the Arkansas River Valley from the park's eastern bluffs.</p>
-        </div>
-      </div>
-    </div>
- 
-    <hr class="divider">
- 
-    <!-- All Activities -->
-    <div class="reveal">
-      <span class="section-label">All Activities</span>
-      <h2 class="section-title">Explore Every Corner</h2>
-    </div>
- 
-    <div class="filter-tabs reveal" id="filterTabs">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="water">Water</button>
-      <button class="filter-btn" data-filter="land">Land</button>
-      <button class="filter-btn" data-filter="family">Family</button>
-      <button class="filter-btn" data-filter="scenic">Scenic</button>
-    </div>
- 
-    <div class="activity-grid" id="activityGrid">
- 
-      <div class="activity-card reveal" data-cat="land">
-        <img class="activity-card__img" src="https://images.unsplash.com/photo-1551632811-561632811-56?w=600&q=70"
-             onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=70'" alt="Hiking">
-        <div class="activity-card__body">
-          <span class="activity-card__cat">Land</span>
-          <h3 class="activity-card__title">Hiking Trails</h3>
-          <p class="activity-card__desc">Over 20 miles of marked trails wind through cedar canyons, along bluffs, and past ancient rock art.</p>
-        </div>
+    <!-- Top experiences -->
+    <section aria-labelledby="featured-heading">
+      <div class="reveal">
+        <p class="label" aria-hidden="true">Don't Miss</p>
+        <h2 id="featured-heading" class="section-title">Top Experiences</h2>
       </div>
  
-      <div class="activity-card reveal" data-cat="water">
-        <img class="activity-card__img" src="https://images.unsplash.com/photo-1530870110042-98b2cb110834?w=600&q=70" alt="Swimming">
-        <div class="activity-card__body">
-          <span class="activity-card__cat">Water</span>
-          <h3 class="activity-card__title">Lake Bailey Swimming</h3>
-          <p class="activity-card__desc">Cool off in the park's designated swimming area on Lake Bailey, with a sandy beach and easy access.</p>
-        </div>
+      <!--
+        Two highlighted attractions as <figure> + <figcaption>.
+        <figure> is appropriate for self-contained image content with a caption.
+      -->
+      <div class="feature-row reveal" role="list">
+ 
+        <figure class="feature-card feature-card--cedar-falls" role="listitem">
+          <div class="feature-card__bg" aria-hidden="true"></div>
+          <div class="feature-card__overlay" aria-hidden="true"></div>
+          <figcaption>
+            <h3>Cedar Falls</h3>
+            <p>Arkansas' most photographed waterfall — a 95-foot cascade into a boulder-lined pool.</p>
+          </figcaption>
+        </figure>
+ 
+        <figure class="feature-card feature-card--sunrise" role="listitem">
+          <div class="feature-card__bg" aria-hidden="true"></div>
+          <div class="feature-card__overlay" aria-hidden="true"></div>
+          <figcaption>
+            <h3>Sunrise Overlook</h3>
+            <p>Watch dawn light up the Arkansas River Valley from the park's eastern bluffs.</p>
+          </figcaption>
+        </figure>
+ 
+      </div>
+    </section>
+ 
+    <hr>
+ 
+    <!-- All activities with filter -->
+    <section aria-labelledby="activities-heading">
+ 
+      <div class="reveal">
+        <p class="label" aria-hidden="true">All Activities</p>
+        <h2 id="activities-heading" class="section-title">Explore Every Corner</h2>
       </div>
  
-      <div class="activity-card reveal" data-cat="water">
-        <img class="activity-card__img" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=70" alt="Fishing">
-        <div class="activity-card__body">
-          <span class="activity-card__cat">Water</span>
-          <h3 class="activity-card__title">Fishing</h3>
-          <p class="activity-card__desc">Cast for bass, bream, and catfish from the banks of Lake Bailey or from the park's fishing pier.</p>
-        </div>
-      </div>
+      <!--
+        <fieldset> groups the filter controls semantically.
+        Each button uses aria-pressed to communicate toggle state.
+      -->
+      <fieldset class="filter-group reveal" aria-controls="activity-list">
+        <legend>Filter by category</legend>
+        <ul role="list">
+          <li><button data-filter="all"    aria-pressed="true">All</button></li>
+          <li><button data-filter="water"  aria-pressed="false">Water</button></li>
+          <li><button data-filter="land"   aria-pressed="false">Land</button></li>
+          <li><button data-filter="family" aria-pressed="false">Family</button></li>
+          <li><button data-filter="scenic" aria-pressed="false">Scenic</button></li>
+        </ul>
+      </fieldset>
  
-      <div class="activity-card reveal" data-cat="land">
-        <img class="activity-card__img" src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=70" alt="Camping">
-        <div class="activity-card__body">
-          <span class="activity-card__cat">Land</span>
-          <h3 class="activity-card__title">Camping</h3>
-          <p class="activity-card__desc">Over 120 campsites from primitive tent spots to full hookup RV pads, plus cozy Mather Lodge cabins.</p>
-        </div>
-      </div>
+      <!--
+        Activity cards: <ul> of <li><article>.
+        Each <article> is a self-contained piece of content.
+        <li hidden> is set by JS to hide filtered items accessibly.
+      -->
+      <ul id="activity-list" class="activity-grid" role="list">
  
-      <div class="activity-card reveal" data-cat="scenic">
-        <img class="activity-card__img" src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=70" alt="Photography">
-        <div class="activity-card__body">
-          <span class="activity-card__cat">Scenic</span>
-          <h3 class="activity-card__title">Photography</h3>
-          <p class="activity-card__desc">Every season brings a different palette — fall color, spring wildflowers, winter ice at Cedar Falls.</p>
-        </div>
-      </div>
+        <li data-cat="land" class="reveal">
+          <article>
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=70"
+                 alt="Hiker on a wooded trail at Petit Jean State Park"
+                 width="600" height="175" loading="lazy">
+            <div class="card-body">
+              <p class="tag">Land</p>
+              <h3>Hiking Trails</h3>
+              <p>Over 20 miles of marked trails wind through cedar canyons, along bluffs, and past ancient rock art.</p>
+            </div>
+          </article>
+        </li>
  
-      <div class="activity-card reveal" data-cat="family">
-        <img class="activity-card__img" src="https://images.unsplash.com/photo-1414609245224-aea2b8b5d53e?w=600&q=70" alt="Picnicking">
-        <div class="activity-card__body">
-          <span class="activity-card__cat">Family</span>
-          <h3 class="activity-card__title">Picnicking</h3>
-          <p class="activity-card__desc">Dozens of shaded picnic areas throughout the park — many with stunning canyon views.</p>
-        </div>
-      </div>
+        <li data-cat="water" class="reveal">
+          <article>
+            <img src="https://images.unsplash.com/photo-1530870110042-98b2cb110834?w=600&q=70"
+                 alt="Swimmers at a lake beach surrounded by trees"
+                 width="600" height="175" loading="lazy">
+            <div class="card-body">
+              <p class="tag">Water</p>
+              <h3>Lake Bailey Swimming</h3>
+              <p>Cool off in the park's designated swimming area on Lake Bailey, with a sandy beach and easy access.</p>
+            </div>
+          </article>
+        </li>
  
-      <div class="activity-card reveal" data-cat="family">
-        <img class="activity-card__img" src="https://images.unsplash.com/photo-1562155618-e1a8bc2eb04f?w=600&q=70" alt="Nature Center">
-        <div class="activity-card__body">
-          <span class="activity-card__cat">Family</span>
-          <h3 class="activity-card__title">Nature Center</h3>
-          <p class="activity-card__desc">Interactive exhibits for all ages covering local wildlife, geology, and the history of the park.</p>
-        </div>
-      </div>
+        <li data-cat="water" class="reveal">
+          <article>
+            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=70"
+                 alt="Fishing rod over a calm lake at sunset"
+                 width="600" height="175" loading="lazy">
+            <div class="card-body">
+              <p class="tag">Water</p>
+              <h3>Fishing</h3>
+              <p>Cast for bass, bream, and catfish from the banks of Lake Bailey or from the park's fishing pier.</p>
+            </div>
+          </article>
+        </li>
  
-      <div class="activity-card reveal" data-cat="scenic">
-        <img class="activity-card__img" src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&q=70" alt="Rock Art">
-        <div class="activity-card__body">
-          <span class="activity-card__cat">Scenic</span>
-          <h3 class="activity-card__title">Native American Rock Art</h3>
-          <p class="activity-card__desc">Thousands of petroglyphs left by prehistoric peoples adorn the park's sandstone bluffs.</p>
-        </div>
-      </div>
+        <li data-cat="land" class="reveal">
+          <article>
+            <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=70"
+                 alt="Tent campsite in a wooded area"
+                 width="600" height="175" loading="lazy">
+            <div class="card-body">
+              <p class="tag">Land</p>
+              <h3>Camping</h3>
+              <p>Over 120 campsites from primitive tent spots to full hookup RV pads, plus cozy Mather Lodge cabins.</p>
+            </div>
+          </article>
+        </li>
  
-      <div class="activity-card reveal" data-cat="water">
-        <img class="activity-card__img" src="https://images.unsplash.com/photo-1530866495561-507c9faab2ed?w=600&q=70" alt="Boating">
-        <div class="activity-card__body">
-          <span class="activity-card__cat">Water</span>
-          <h3 class="activity-card__title">Boating &amp; Kayaking</h3>
-          <p class="activity-card__desc">Paddleboats and kayaks are available for rental on Lake Bailey — no motorized boats permitted.</p>
-        </div>
-      </div>
+        <li data-cat="scenic" class="reveal">
+          <article>
+            <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=70"
+                 alt="Panoramic aerial view of a forested mountain valley"
+                 width="600" height="175" loading="lazy">
+            <div class="card-body">
+              <p class="tag">Scenic</p>
+              <h3>Photography</h3>
+              <p>Every season brings a different palette — fall color, spring wildflowers, winter ice at Cedar Falls.</p>
+            </div>
+          </article>
+        </li>
  
-    </div>
+        <li data-cat="family" class="reveal">
+          <article>
+            <img src="https://images.unsplash.com/photo-1414609245224-aea2b8b5d53e?w=600&q=70"
+                 alt="Picnic table in a shaded park setting"
+                 width="600" height="175" loading="lazy">
+            <div class="card-body">
+              <p class="tag">Family</p>
+              <h3>Picnicking</h3>
+              <p>Dozens of shaded picnic areas throughout the park — many with stunning canyon views.</p>
+            </div>
+          </article>
+        </li>
+ 
+        <li data-cat="family" class="reveal">
+          <article>
+            <img src="https://images.unsplash.com/photo-1562155618-e1a8bc2eb04f?w=600&q=70"
+                 alt="Interactive nature exhibit inside a visitor center"
+                 width="600" height="175" loading="lazy">
+            <div class="card-body">
+              <p class="tag">Family</p>
+              <h3>Nature Center</h3>
+              <p>Interactive exhibits for all ages covering local wildlife, geology, and the history of the park.</p>
+            </div>
+          </article>
+        </li>
+ 
+        <li data-cat="scenic" class="reveal">
+          <article>
+            <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&q=70"
+                 alt="Ancient petroglyphs carved into sandstone bluffs"
+                 width="600" height="175" loading="lazy">
+            <div class="card-body">
+              <p class="tag">Scenic</p>
+              <h3>Native American Rock Art</h3>
+              <p>Thousands of petroglyphs left by prehistoric peoples adorn the park's sandstone bluffs.</p>
+            </div>
+          </article>
+        </li>
+ 
+        <li data-cat="water" class="reveal">
+          <article>
+            <img src="https://images.unsplash.com/photo-1530866495561-507c9faab2ed?w=600&q=70"
+                 alt="Kayak on a calm lake surrounded by forest"
+                 width="600" height="175" loading="lazy">
+            <div class="card-body">
+              <p class="tag">Water</p>
+              <h3>Boating &amp; Kayaking</h3>
+              <p>Paddleboats and kayaks available for rental on Lake Bailey — no motorized boats permitted.</p>
+            </div>
+          </article>
+        </li>
+ 
+      </ul>
+    </section>
+ 
   </main>
  
   <!-- ══ FOOTER ═════════════════════════════════ -->
   <footer class="site-footer">
-    <p>© 2025 Petit Jean State Park ·
-      <a href="https://www.arkansasstateparks.com/parks/petit-jean-state-park" target="_blank">Arkansas State Parks</a>
+    <p>
+      © 2025 Petit Jean State Park ·
+      <a href="https://www.arkansasstateparks.com/parks/petit-jean-state-park"
+         target="_blank" rel="noopener noreferrer">Arkansas State Parks</a>
     </p>
   </footer>
  

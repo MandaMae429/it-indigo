@@ -1,6 +1,12 @@
+/* ═══════════════════════════════════════════════
+   style.css  —  Global Shared Styles
+   Petit Jean State Park
+   Colorway: Deep Forest / Mint / Bark Gold
+   ═══════════════════════════════════════════════ */
+ 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
  
-/* ── CSS Variables ───────────────────────────── */
+/* ── Custom Properties ───────────────────────── */
 :root {
   --bg:           #0B1C15;
   --bg-alt:       #112318;
@@ -32,6 +38,7 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
+ul, ol { list-style: none; }
  
 /* ══ SITE HEADER ════════════════════════════════ */
 .site-header {
@@ -46,6 +53,8 @@ img { max-width: 100%; display: block; }
   top: 0;
   z-index: 100;
 }
+ 
+/* Logo link wrapping the NPS mark + park name */
 .site-header__logo {
   display: flex;
   align-items: center;
@@ -54,14 +63,17 @@ img { max-width: 100%; display: block; }
 }
 .site-header__logo:hover { opacity: 0.75; }
 .site-header__logo img { width: 46px; height: auto; }
-.site-header__title { display: flex; flex-direction: column; }
-.site-header__title .name {
+ 
+/* hgroup holds the park name headline + tagline */
+.site-header hgroup { display: flex; flex-direction: column; }
+.site-header hgroup h1 {
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-head);
+  line-height: 1.2;
 }
-.site-header__title .sub {
+.site-header hgroup p {
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.2em;
@@ -69,9 +81,9 @@ img { max-width: 100%; display: block; }
   color: var(--accent);
 }
  
-/* ══ NAV ════════════════════════════════════════ */
-.site-nav { display: flex; align-items: center; gap: 0.15rem; }
-.site-nav a {
+/* ══ PRIMARY NAVIGATION ═════════════════════════ */
+.primary-nav { display: flex; align-items: center; gap: 0.15rem; }
+.primary-nav a {
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -82,13 +94,13 @@ img { max-width: 100%; display: block; }
   transition: color var(--transition), background var(--transition);
   white-space: nowrap;
 }
-.site-nav a:hover,
-.site-nav a.active {
+.primary-nav a:hover,
+.primary-nav a[aria-current="page"] {
   color: var(--accent);
   background: rgba(126, 203, 160, 0.1);
 }
  
-/* ══ HAMBURGER ══════════════════════════════════ */
+/* ══ HAMBURGER TOGGLE ═══════════════════════════ */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -107,11 +119,11 @@ img { max-width: 100%; display: block; }
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
  
-/* ══ PAGE HERO ══════════════════════════════════ */
+/* ══ PAGE HERO (inner pages) ════════════════════ */
 .page-hero {
   position: relative;
   height: 300px;
@@ -139,8 +151,8 @@ img { max-width: 100%; display: block; }
   z-index: 2;
   padding: 2rem 2.5rem;
 }
-.page-hero__eyebrow {
-  display: block;
+/* eyebrow label above the hero heading */
+.page-hero__content p {
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.22em;
@@ -148,7 +160,7 @@ img { max-width: 100%; display: block; }
   color: var(--accent);
   margin-bottom: 0.5rem;
 }
-.page-hero__title {
+.page-hero__content h1 {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 700;
@@ -156,15 +168,16 @@ img { max-width: 100%; display: block; }
   line-height: 1.1;
 }
  
-/* ══ PAGE CONTENT ═══════════════════════════════ */
+/* ══ PAGE CONTENT WRAPPER ═══════════════════════ */
 .page-content {
   max-width: 1000px;
   margin: 0 auto;
   padding: 3rem 2rem 5rem;
 }
  
-/* ══ TYPOGRAPHY HELPERS ═════════════════════════ */
-.section-label {
+/* ══ SECTION HEADINGS ═══════════════════════════ */
+/* <p class="label"> precedes most <h2> section headings */
+p.label {
   display: block;
   font-size: 0.68rem;
   font-weight: 600;
@@ -173,14 +186,14 @@ img { max-width: 100%; display: block; }
   color: var(--accent);
   margin-bottom: 0.5rem;
 }
-.section-title {
+h2.section-title {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   color: var(--text-head);
   line-height: 1.2;
   margin-bottom: 1rem;
 }
-.section-body {
+p.section-body {
   font-size: 0.95rem;
   color: var(--text-body);
   max-width: 680px;
@@ -194,21 +207,21 @@ img { max-width: 100%; display: block; }
   gap: 1.25rem;
   margin-top: 2rem;
 }
-.card {
+article.card {
   background: var(--cell-bg);
   border: 1px solid rgba(45,102,69,0.3);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
-.card:hover {
+article.card:hover {
   transform: translateY(-5px);
   box-shadow: 0 16px 40px rgba(0,0,0,0.5);
   border-color: rgba(126,203,160,0.35);
 }
-.card__img { width: 100%; height: 170px; object-fit: cover; }
-.card__body { padding: 1.25rem; }
-.card__badge {
+article.card img { width: 100%; height: 170px; object-fit: cover; }
+article.card .card-body { padding: 1.25rem; }
+article.card .card-body p.tag {
   display: inline-block;
   font-size: 0.62rem;
   font-weight: 600;
@@ -221,22 +234,22 @@ img { max-width: 100%; display: block; }
   padding: 0.2rem 0.6rem;
   margin-bottom: 0.6rem;
 }
-.card__title {
+article.card h3 {
   font-family: var(--font-display);
   font-size: 1.05rem;
   color: var(--text-head);
   margin-bottom: 0.4rem;
 }
-.card__text { font-size: 0.85rem; color: var(--text-body); line-height: 1.5; }
+article.card p { font-size: 0.85rem; color: var(--text-body); line-height: 1.5; }
  
-/* ══ DIVIDER ════════════════════════════════════ */
-.divider {
+/* ══ HORIZONTAL RULE ════════════════════════════ */
+hr {
   border: none;
   border-top: 1px solid rgba(45,102,69,0.25);
   margin: 2.5rem 0;
 }
  
-/* ══ FOOTER ═════════════════════════════════════ */
+/* ══ SITE FOOTER ════════════════════════════════ */
 .site-footer {
   background: var(--bg-alt);
   border-top: 1px solid rgba(45,102,69,0.2);
@@ -253,16 +266,13 @@ img { max-width: 100%; display: block; }
   transform: translateY(24px);
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
+.reveal.visible { opacity: 1; transform: none; }
  
 /* ══ RESPONSIVE ═════════════════════════════════ */
 @media (max-width: 768px) {
   .site-header { padding: 0.75rem 1.25rem; position: relative; }
   .nav-toggle { display: flex; }
-  .site-nav {
+  .primary-nav {
     display: none;
     position: absolute;
     top: 100%; left: 0; right: 0;
@@ -272,12 +282,11 @@ img { max-width: 100%; display: block; }
     border-bottom: 1px solid rgba(45,102,69,0.4);
     gap: 0;
   }
-  .site-nav.open { display: flex; }
-  .site-nav a { width: 100%; padding: 0.7rem 1rem; }
+  .primary-nav.open { display: flex; }
+  .primary-nav a { width: 100%; padding: 0.7rem 1rem; }
   .page-content { padding: 2rem 1.25rem 4rem; }
 }
 @media (max-width: 480px) {
-  .site-header__title .name { font-size: 0.88rem; }
+  .site-header hgroup h1 { font-size: 0.88rem; }
   .page-hero { height: 220px; }
 }
- 
