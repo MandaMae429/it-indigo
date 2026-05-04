@@ -267,6 +267,21 @@ hr {
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 .reveal.visible { opacity: 1; transform: none; }
+
+article{
+  border-bottom: solid .5px #7ECBA0;
+  margin-bottom: 37px;
+}
+
+.reveal{
+  padding-bottom: 37px;
+}
+
+.body{
+  padding-bottom: 68px;
+}
+
+
  
 /* ══ RESPONSIVE ═════════════════════════════════ */
 @media (max-width: 768px) {

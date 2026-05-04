@@ -268,14 +268,14 @@ body { padding: 0; }
  
 /* ── Cell background images ───────────────────── */
 .bento-grid > li:nth-child(1) .bento-cell__bg { background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/2d/60/27/caption.jpg?w=1400&h=-1&s=1'); }
-.bento-grid > li:nth-child(2) .bento-cell__bg { background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=75'); }
-.bento-grid > li:nth-child(3) .bento-cell__bg { background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=75'); }
-.bento-grid > li:nth-child(4) .bento-cell__bg { background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1000&q=75'); }
+.bento-grid > li:nth-child(2) .bento-cell__bg { background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/f1/99/3a/petit-jean-state-park.jpg?w=1400&h=-1&s=1'); }
+.bento-grid > li:nth-child(3) .bento-cell__bg { background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/31/75/d4/petit-jean-state-park.jpg?w=2000&h=-1&s=1'); }
+.bento-grid > li:nth-child(4) .bento-cell__bg { background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/8d/5b/a0/petit-jean-state-park.jpg?w=800&h=-1&s=1'); }
 .bento-grid > li:nth-child(5) .bento-cell__bg { background-image: url('https://images.pexels.com/photos/33891352/pexels-photo-33891352.jpeg'); }
 .bento-grid > li:nth-child(6) .bento-cell__bg { background-image: url('https://lh3.googleusercontent.com/gps-cs-s/APNQkAGDYVj7tQl-fTVGpyXR8MsqxGVprkbmDnrPgeAV9euSlARXjJRL6CPiIJycZ3IG3wBLXLkCXGx8VjQhUE7_1FNi3LCuXuMfIABDN41GXFTx87R5UIedn2z5BvkCBb1VSSN4k6WP5Q2xz30=s1360-w1360-h1020-rw'); }
-.bento-grid > li:nth-child(7) .bento-cell__bg { background-image: url('https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?w=1000&q=75'); }
-.bento-grid > li:nth-child(8) .bento-cell__bg { background-image: url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&q=75'); }
-.bento-grid > li:nth-child(9) .bento-cell__bg { background-image: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=75'); }
+.bento-grid > li:nth-child(7) .bento-cell__bg { background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/bf/c5/b2/caption.jpg?w=1400&h=-1&s=1'); }
+.bento-grid > li:nth-child(8) .bento-cell__bg { background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/19/4c/2e/caption.jpg?w=1100&h=-1&s=1'); }
+.bento-grid > li:nth-child(9) .bento-cell__bg { background-image: url('https://dustyshoesandbeautifulviews.com/wp-content/uploads/2016/08/img_0292.jpg?w=2688&h=1520'); }
  
 /* ── Responsive ───────────────────────────────── */
 @media (max-width: 900px) {

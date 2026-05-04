@@ -1,102 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Petit Jean State Park — Temperature Forecast</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Forecast — Petit Jean State Park</title>
+  <meta name="description" content="7-day hourly temperature forecast for Petit Jean State Park and surrounding areas, powered by Open-Meteo.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/weather.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
  
-  <header class="site-header">
-    <div class="header-overlay"></div>
-    <div class="header-content">
-      <span class="park-eyebrow">Arkansas State Parks</span>
-      <h1>Petit Jean State Park</h1>
-      <p class="header-sub">Morrilton, Arkansas &mdash; Temperature Forecast</p>
-    </div>
+  <!-- ══ SITE HEADER ════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <a href="index.html" class="site-header__logo" aria-label="Petit Jean State Park — home">
+      <img src="assets/img/logo.png" alt="National Park Service arrowhead logo" width="46" height="auto">
+      <hgroup>
+        <h1>Petit Jean State Park</h1>
+        <p>Arkansas' First State Park</p>
+      </hgroup>
+    </a>
+    <button class="nav-toggle"
+            aria-controls="primary-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="history.html">History</a>
+      <a href="things-to-do.html">Things To Do</a>
+      <a href="trails.html">Trails</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="visitor-info.html">Visitor Info</a>
+      <a href="weather.html">Weather</a>
+    </nav>
   </header>
  
-  <main class="container">
+  <!-- ══ PAGE HERO ══════════════════════════════ -->
+  <div class="page-hero" role="img" aria-label="Storm clouds building over a mountain forest">
+    <div class="page-hero__bg weather-hero__bg" aria-hidden="true"></div>
+    <div class="page-hero__overlay" aria-hidden="true"></div>
+    <div class="page-hero__content">
+      <p>Live Forecast</p>
+      <h1>Temperature<br>Forecast</h1>
+    </div>
+  </div>
  
-    <!-- Search Form -->
+  <!-- ══ MAIN CONTENT ═══════════════════════════ -->
+  <main id="main-content" class="page-content">
+ 
+    <!-- ── Search form ─────────────────────────── -->
+    <!--
+      Wrapped in <section> with its own labelled heading.
+      <form> with novalidate — JS handles all validation.
+      aria-describedby links the input to both the error
+      paragraph and the hint text for screen readers.
+    -->
     <section class="search-section" aria-labelledby="search-heading">
+      <p class="label" aria-hidden="true">Search</p>
       <h2 id="search-heading" class="section-title">Location Search</h2>
+ 
       <form id="locationForm" novalidate>
-        <div class="form-group">
-          <label for="locationInput">Enter a location</label>
-          <div class="input-row">
-            <input
-              type="text"
-              id="locationInput"
-              name="location"
-              placeholder="e.g. Morrilton, Arkansas"
-              value="Morrilton, Arkansas"
-              autocomplete="off"
-              aria-required="true"
-              aria-describedby="locationError"
-            />
-            <button type="submit" id="searchBtn">Get Forecast</button>
-          </div>
-          <p class="error-msg hidden" id="locationError" role="alert" aria-live="polite"></p>
-          <p class="field-hint">Enter a city name &mdash; e.g. <strong>Morrilton, Arkansas</strong> for Petit Jean State Park</p>
+        <label for="locationInput">Enter a location</label>
+        <div class="input-row">
+          <input
+            type="search"
+            id="locationInput"
+            name="location"
+            placeholder="e.g. Morrilton, Arkansas"
+            value="Morrilton, Arkansas"
+            autocomplete="off"
+            aria-required="true"
+            aria-describedby="locationError locationHint"
+          >
+          <button type="submit" id="searchBtn">Get Forecast</button>
         </div>
+        <p id="locationError" class="error-msg hidden" role="alert" aria-live="polite"></p>
+        <small id="locationHint" class="field-hint">
+          Enter a city name — e.g. <strong>Morrilton, Arkansas</strong> for Petit Jean State Park
+        </small>
       </form>
     </section>
  
-    <!-- Location Details -->
+    <!-- ── Location details ────────────────────── -->
+    <!--
+      Hidden until a geocode result is returned by JS.
+      Uses <dl> for key/value metadata — semantically
+      correct for labelled data pairs.
+    -->
     <section id="locationSection" class="hidden" aria-labelledby="loc-heading">
+      <p class="label" aria-hidden="true">Resolved Location</p>
       <h2 id="loc-heading" class="section-title">Location Details</h2>
-      <div class="location-card" id="locationCard">
-        <div class="loc-grid">
-          <div class="loc-field">
-            <span class="loc-label">Name</span>
-            <span class="loc-value" id="locName"></span>
-          </div>
-          <div class="loc-field">
-            <span class="loc-label">Region</span>
-            <span class="loc-value" id="locAdmin1"></span>
-          </div>
-          <div class="loc-field">
-            <span class="loc-label">Country</span>
-            <span class="loc-value" id="locCountry"></span>
-          </div>
-          <div class="loc-field">
-            <span class="loc-label">Latitude</span>
-            <span class="loc-value" id="locLat"></span>
-          </div>
-          <div class="loc-field">
-            <span class="loc-label">Longitude</span>
-            <span class="loc-value" id="locLon"></span>
-          </div>
-        </div>
-      </div>
+      <dl class="location-card" id="locationCard">
+        <div><dt>Name</dt>      <dd id="locName"></dd></div>
+        <div><dt>Region</dt>    <dd id="locAdmin1"></dd></div>
+        <div><dt>Country</dt>   <dd id="locCountry"></dd></div>
+        <div><dt>Latitude</dt>  <dd id="locLat"></dd></div>
+        <div><dt>Longitude</dt> <dd id="locLon"></dd></div>
+      </dl>
     </section>
  
-    <!-- Loading Indicator -->
-    <div id="loadingIndicator" class="hidden loading-wrap" aria-live="polite" aria-label="Loading forecast">
-      <div class="spinner"></div>
-      <p>Fetching forecast data&hellip;</p>
+    <!-- ── Loading indicator ───────────────────── -->
+    <!--
+      role="status" with aria-live="polite" announces
+      the loading state to screen readers without
+      interrupting ongoing announcements.
+    -->
+    <div id="loadingIndicator"
+         class="hidden loading-wrap"
+         role="status"
+         aria-live="polite"
+         aria-label="Loading forecast data">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Fetching forecast data…</p>
     </div>
  
-    <!-- API Error -->
-    <p class="error-msg hidden" id="apiError" role="alert" aria-live="polite"></p>
+    <!-- API-level error (shown by JS on fetch failure) -->
+    <p id="apiError" class="error-msg hidden" role="alert" aria-live="polite"></p>
  
-    <!-- Chart Section -->
+    <!-- ── Temperature chart ───────────────────── -->
     <section id="chartSection" class="hidden" aria-labelledby="chart-heading">
-      <h2 id="chart-heading" class="section-title">Temperature Line Chart <span class="unit-note">(°F, 7-day hourly)</span></h2>
+      <p class="label" aria-hidden="true">Visualization</p>
+      <h2 id="chart-heading" class="section-title">
+        Temperature Line Chart
+        <small class="unit-note">(°F, 7-day hourly)</small>
+      </h2>
       <div class="chart-wrap">
-        <canvas id="tempChart" role="img" aria-label="Hourly temperature forecast line chart"></canvas>
+        <!--
+          <canvas> with role="img" and a text fallback.
+          The aria-label is updated by JS once data loads.
+        -->
+        <canvas id="tempChart"
+                role="img"
+                aria-label="Hourly temperature forecast line chart for the selected location">
+          Your browser does not support the canvas element.
+          Please see the hourly data table below.
+        </canvas>
       </div>
     </section>
  
-    <!-- Table Section -->
+    <!-- ── Hourly forecast table ──────────────── -->
+    <!--
+      Semantic <table> with <caption>, <thead>, <tbody>.
+      <th scope="col"> explicitly scopes every column header.
+      Rows are populated by weather.js.
+    -->
     <section id="tableSection" class="hidden" aria-labelledby="table-heading">
-      <h2 id="table-heading" class="section-title">Hourly Forecast Table <span class="unit-note">(°F)</span></h2>
+      <p class="label" aria-hidden="true">Data</p>
+      <h2 id="table-heading" class="section-title">
+        Hourly Forecast Table
+        <small class="unit-note">(°F)</small>
+      </h2>
       <div class="table-wrap">
-        <table id="forecastTable" aria-label="Hourly temperature forecast">
+        <table id="forecastTable">
+          <caption>Hourly temperature forecast for the selected location</caption>
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -104,18 +164,27 @@
               <th scope="col">Temperature (°F)</th>
             </tr>
           </thead>
-          <tbody id="forecastTableBody"></tbody>
+          <tbody id="forecastTableBody">
+            <!-- Populated by weather.js -->
+          </tbody>
         </table>
       </div>
     </section>
  
   </main>
  
+  <!-- ══ FOOTER ═════════════════════════════════ -->
   <footer class="site-footer">
-    <p>Weather data provided by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a> &mdash; free &amp; open-source weather API.</p>
+    <p>
+      Weather data by
+      <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>
+      — free &amp; open-source weather API.
+    </p>
   </footer>
  
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/weather.js"></script>
+ 
 </body>
 </html>
  
