@@ -92,21 +92,7 @@ Copy
         <p class="label" aria-hidden="true">All Activities</p>
         <h2 id="activities-heading" class="section-title">Explore Every Corner</h2>
       </div>
- 
-      <!--
-        <fieldset> groups the filter controls semantically.
-        Each button uses aria-pressed to communicate toggle state.
-      -->
-      <fieldset class="filter-group reveal" aria-controls="activity-list">
-        <legend>Filter by category</legend>
-        <ul role="list">
-          <li><button data-filter="all"    aria-pressed="true">All</button></li>
-          <li><button data-filter="water"  aria-pressed="false">Water</button></li>
-          <li><button data-filter="land"   aria-pressed="false">Land</button></li>
-          <li><button data-filter="family" aria-pressed="false">Family</button></li>
-          <li><button data-filter="scenic" aria-pressed="false">Scenic</button></li>
-        </ul>
-      </fieldset>
+     
  
       <!--
         Activity cards: <ul> of <li><article>.
@@ -117,11 +103,10 @@ Copy
  
         <li data-cat="land" class="reveal">
           <article>
-            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=70"
-                 alt="Hiker on a wooded trail at Petit Jean State Park"
+            <img src="https://images.alltrails.com/eyJidWNrZXQiOiJhc3NldHMuYWxsdHJhaWxzLmNvbSIsImtleSI6InVwbG9hZHMvcGhvdG8vaW1hZ2UvMTEyMjkwMTA0LzQzNzlkNGY1NjcyZDIxMTJiYjFkNjlmODBjYTRjZWQ1LmpwZyIsImVkaXRzIjp7InRvRm9ybWF0IjoianBlZyIsInJlc2l6ZSI6eyJ3aWR0aCI6NTAwLCJoZWlnaHQiOjUwMCwiZml0IjoiaW5zaWRlIn0sInJvdGF0ZSI6bnVsbCwianBlZyI6eyJ0cmVsbGlzUXVhbnRpc2F0aW9uIjp0cnVlLCJvdmVyc2hvb3REZXJpbmdpbmciOnRydWUsIm9wdGltaXNlU2NhbnMiOnRydWUsInF1YW50aXNhdGlvblRhYmxlIjozfX19"
+                 alt="rocky trail at Petit Jean State Park"
                  width="600" height="175" loading="lazy">
             <div class="card-body">
-              <p class="tag">Land</p>
               <h3>Hiking Trails</h3>
               <p>Over 20 miles of marked trails wind through cedar canyons, along bluffs, and past ancient rock art.</p>
             </div>
@@ -130,11 +115,10 @@ Copy
  
         <li data-cat="water" class="reveal">
           <article>
-            <img src="https://images.unsplash.com/photo-1530870110042-98b2cb110834?w=600&q=70"
-                 alt="Swimmers at a lake beach surrounded by trees"
+            <img src="https://www.allaboutarkansas.com/wp-content/uploads/2023/02/Petit-Jean-State-Park-Lake-Bailey-1024x768.jpg"
+                 alt="lake surrounded by trees"
                  width="600" height="175" loading="lazy">
             <div class="card-body">
-              <p class="tag">Water</p>
               <h3>Lake Bailey Swimming</h3>
               <p>Cool off in the park's designated swimming area on Lake Bailey, with a sandy beach and easy access.</p>
             </div>
@@ -143,11 +127,10 @@ Copy
  
         <li data-cat="water" class="reveal">
           <article>
-            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=70"
-                 alt="Fishing rod over a calm lake at sunset"
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI-gdh6pyFL5H-AJE4pNMVX80af3goHISdCw&s"
+                 alt="man holding lots of fish on a string horizontally"
                  width="600" height="175" loading="lazy">
             <div class="card-body">
-              <p class="tag">Water</p>
               <h3>Fishing</h3>
               <p>Cast for bass, bream, and catfish from the banks of Lake Bailey or from the park's fishing pier.</p>
             </div>
@@ -160,7 +143,6 @@ Copy
                  alt="Tent campsite in a wooded area"
                  width="600" height="175" loading="lazy">
             <div class="card-body">
-              <p class="tag">Land</p>
               <h3>Camping</h3>
               <p>Over 120 campsites from primitive tent spots to full hookup RV pads, plus cozy Mather Lodge cabins.</p>
             </div>
@@ -169,11 +151,10 @@ Copy
  
         <li data-cat="scenic" class="reveal">
           <article>
-            <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=70"
-                 alt="Panoramic aerial view of a forested mountain valley"
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsR7-56ucKHvCC2qnDsHlPIn1VWDUAfNpA1A&s"
+                 alt="couple posing on a cliff"
                  width="600" height="175" loading="lazy">
             <div class="card-body">
-              <p class="tag">Scenic</p>
               <h3>Photography</h3>
               <p>Every season brings a different palette — fall color, spring wildflowers, winter ice at Cedar Falls.</p>
             </div>
@@ -182,11 +163,10 @@ Copy
  
         <li data-cat="family" class="reveal">
           <article>
-            <img src="https://images.unsplash.com/photo-1414609245224-aea2b8b5d53e?w=600&q=70"
-                 alt="Picnic table in a shaded park setting"
+            <img src="https://www.arkansas.com/sites/default/files/styles/scale_1440/public/2026-01/Petit%20Jean%20State%20Park%20Yurt%20-%20Unique%20Stay%20Arkansas.jpg?itok=xse8U09q"
+                 alt="kids around fire with picnic table"
                  width="600" height="175" loading="lazy">
             <div class="card-body">
-              <p class="tag">Family</p>
               <h3>Picnicking</h3>
               <p>Dozens of shaded picnic areas throughout the park — many with stunning canyon views.</p>
             </div>
@@ -195,11 +175,10 @@ Copy
  
         <li data-cat="family" class="reveal">
           <article>
-            <img src="https://images.unsplash.com/photo-1562155618-e1a8bc2eb04f?w=600&q=70"
-                 alt="Interactive nature exhibit inside a visitor center"
+            <img src="https://s3.amazonaws.com/eoamedia/carpet_rock_f.jpg"
+                 alt="geographic rock feature"
                  width="600" height="175" loading="lazy">
             <div class="card-body">
-              <p class="tag">Family</p>
               <h3>Nature Center</h3>
               <p>Interactive exhibits for all ages covering local wildlife, geology, and the history of the park.</p>
             </div>
@@ -208,24 +187,22 @@ Copy
  
         <li data-cat="scenic" class="reveal">
           <article>
-            <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&q=70"
-                 alt="Ancient petroglyphs carved into sandstone bluffs"
+            <img src="https://archeology.uark.edu/ozarkbluffshelters/wp-content/uploads/sites/2/2016/01/paddlefish-300x225.jpg"
+                 alt="Ancient petroglyphs carved into cave"
                  width="600" height="175" loading="lazy">
             <div class="card-body">
-              <p class="tag">Scenic</p>
               <h3>Native American Rock Art</h3>
-              <p>Thousands of petroglyphs left by prehistoric peoples adorn the park's sandstone bluffs.</p>
+              <p>Thousands of petroglyphs left by prehistoric peoples adorn the park's caves.</p>
             </div>
           </article>
         </li>
  
         <li data-cat="water" class="reveal">
           <article>
-            <img src="https://images.unsplash.com/photo-1530866495561-507c9faab2ed?w=600&q=70"
+            <img src="https://travelswithbirdy.com/wp-content/uploads/2017/11/2014-06-06-3762.jpg"
                  alt="Kayak on a calm lake surrounded by forest"
                  width="600" height="175" loading="lazy">
             <div class="card-body">
-              <p class="tag">Water</p>
               <h3>Boating &amp; Kayaking</h3>
               <p>Paddleboats and kayaks available for rental on Lake Bailey — no motorized boats permitted.</p>
             </div>
@@ -238,11 +215,12 @@ Copy
   </main>
  
   <!-- ══ FOOTER ═════════════════════════════════ -->
-  <footer class="site-footer">
+<footer class="site-footer">
     <p>
-      © 2025 Petit Jean State Park ·
+      &copy; 2026 Amanda Myers ·
       <a href="https://www.arkansasstateparks.com/parks/petit-jean-state-park"
-         target="_blank" rel="noopener noreferrer">Arkansas State Parks</a>
+         target="_blank"
+         rel="noopener noreferrer">Arkansas State Parks</a>
     </p>
   </footer>
  

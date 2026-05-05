@@ -1,0 +1,175 @@
+/* ═══════════════════════════════════════════════
+   visitor-info.css  —  Visitor Info & FAQ Page
+   ═══════════════════════════════════════════════ */
+ 
+body { padding: 0; }
+ 
+.info-hero__bg {
+  background-image: url('https://images.unsplash.com/photo-1414609245224-aea2b8b5d53e?w=1600&q=80');
+}
+ 
+/* ── Quick facts: <dl> grid ───────────────────── */
+dl.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+dl.facts-grid > div {
+  background: var(--cell-bg);
+  border: 1px solid rgba(45,102,69,0.25);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+dl.facts-grid > div .fact-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+dl.facts-grid > div dt {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+dl.facts-grid > div dd {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text-head);
+  line-height: 1.4;
+}
+dl.facts-grid > div dd small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+ 
+/* ── Fees: semantic <table> ───────────────────── */
+.fees-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(45,102,69,0.25);
+  margin-top: 1.25rem;
+}
+table.fees-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+table.fees-table caption {
+  caption-side: bottom;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 0.75rem;
+  text-align: left;
+}
+table.fees-table thead th {
+  padding: 0.75rem 1rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: left;
+  border-bottom: 1px solid rgba(45,102,69,0.3);
+  background: var(--cell-bg);
+}
+table.fees-table tbody td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid rgba(45,102,69,0.1);
+  color: var(--text-body);
+}
+table.fees-table tbody tr:last-child td { border-bottom: none; }
+table.fees-table tbody tr:hover td { background: rgba(45,102,69,0.06); }
+table.fees-table td.price { color: var(--accent-warm); font-weight: 600; }
+ 
+/* ── FAQ: <details>/<summary> accordion ──────── */
+/* Native HTML interactive disclosure pattern */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+details.faq-item {
+  background: var(--cell-bg);
+  border: 1px solid rgba(45,102,69,0.25);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+details.faq-item[open] { border-color: rgba(126,203,160,0.4); }
+ 
+details.faq-item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.25rem;
+  cursor: pointer;
+  font-size: 0.92rem;
+  color: var(--text-head);
+  gap: 1rem;
+  list-style: none; /* Remove default triangle */
+  user-select: none;
+}
+details.faq-item summary::-webkit-details-marker { display: none; }
+details.faq-item summary:hover { color: var(--accent); }
+ 
+/* Custom +/x toggle icon */
+details.faq-item summary::after {
+  content: '+';
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border: 1px solid rgba(45,102,69,0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-align: center;
+  line-height: 20px;
+  transition: transform var(--transition), background var(--transition);
+}
+details.faq-item[open] summary::after {
+  content: '×';
+  transform: rotate(0deg);
+  background: rgba(126,203,160,0.1);
+}
+ 
+details.faq-item .faq-answer {
+  padding: 0 1.25rem 1.1rem;
+  font-size: 0.88rem;
+  color: var(--text-body);
+  line-height: 1.65;
+}
+details.faq-item .faq-answer a { color: var(--accent); }
+details.faq-item .faq-answer a:hover { text-decoration: underline; }
+ 
+/* ── Contact: semantic <address> ─────────────── */
+address.contact-grid {
+  background: var(--cell-bg);
+  border: 1px solid rgba(45,102,69,0.25);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  font-style: normal;
+}
+address.contact-grid dl { display: flex; flex-direction: column; gap: 0.3rem; }
+address.contact-grid dt {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+address.contact-grid dd { font-size: 0.95rem; color: var(--text-head); }
+address.contact-grid dd a { color: var(--accent); }
+address.contact-grid dd a:hover { text-decoration: underline; }
+ 
+@media (max-width: 540px) {
+  address.contact-grid { grid-template-columns: 1fr; }
+}

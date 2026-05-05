@@ -123,10 +123,10 @@ figure.feature-card .feature-card__bg {
  
 /* Individual feature card backgrounds */
 figure.feature-card--cedar-falls .feature-card__bg {
-  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=75');
+  background-image: url('https://arkokhiker.org/wp-content/uploads/2015/04/2015-04-11-petit-jean-080-81-Stitch.jpg');
 }
 figure.feature-card--sunrise .feature-card__bg {
-  background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=75');
+  background-image: url('https://i.redd.it/5p8su1l1t6r31.jpg');
 }
 figure.feature-card:hover .feature-card__bg { transform: scale(1.06); }
 figure.feature-card .feature-card__overlay {
